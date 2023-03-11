@@ -1,0 +1,31 @@
+.person-container {
+  width: calc(100% - 30px);
+  padding: 0 15px;
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .person-content {
+    max-width: 1200px;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    .person-router-view {
+      position: relative;
+      width: 100%;
+      @media (min-width: 992px) {
+        width: calc(80% - 1px);
+      }
+      // 为雇佣历史界面单独设置左边距
+      // &.hiring-history {
+      //   margin-left: 50px;
+      // }
+    }
+  }
+}

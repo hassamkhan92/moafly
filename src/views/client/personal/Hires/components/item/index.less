@@ -1,0 +1,113 @@
+.agent-item {
+  display: flex;
+  gap: 32px;
+  font-family: LibreFranklin-Regular, LibreFranklin;
+  font-weight: 400;
+  color: #333333;
+  position: relative;
+  width: 100%;
+  // height: 279px;
+  background: rgba(15, 27, 67, 0.02);
+  border-radius: 8px;
+  padding: 16px 16px 24px 24px;
+  margin-bottom: 16px;
+  .flex();
+  justify-content: space-between;
+  align-items: flex-start;
+  .icon {
+    img {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+    }
+  }
+  .agent-detail {
+    width: calc(100% - 94px);
+    height: 100%;
+    .level {
+      .flex();
+      justify-content: space-between;
+    }
+    .detail-level1 {
+      margin-bottom: 10px;
+      .name {
+        font-family: 'Libre Franklin';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #0f1b43;
+      }
+    }
+    .detail-level2 {
+      margin-bottom: 11px;
+      .bold {
+        font-family: 'Libre Franklin';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(15, 27, 67, 0.6);
+      }
+      .rate-box {
+        transform: translateY(5px);
+        .flex();
+        justify-content: space-between;
+        .el-rate__icon {
+          color: #fdd546 !important;
+        }
+        .rage-title {
+          width: 34px;
+          height: 16px;
+          background: #fdd446;
+          border-radius: 6px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 15px;
+          text-align: center;
+          color: #ffffff;
+        }
+      }
+    }
+    .detail-level3 {
+      margin-bottom: 12px;
+      .address {
+        font-family: 'Libre Franklin';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(15, 27, 67, 0.6);
+      }
+    }
+    .detail-level4 {
+      margin-bottom: 16px;
+      .introduction {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-family: 'Libre Franklin';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba(15, 27, 67, 0.8);
+      }
+    }
+    .detail-level5 {
+      .contract-title {
+        font-family: 'Libre Franklin';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #0f1b43;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

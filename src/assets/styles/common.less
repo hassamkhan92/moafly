@@ -1,0 +1,239 @@
+/**
+ * 主要是覆盖elementui的默认样式
+ */
+/deep/.el-select-dropdown {
+  .selected {
+    color: #dc5674;
+  }
+}
+/*表格样式*/
+/deep/.el-table {
+  td {
+    text-align: center;
+    div {
+      font-size: 15px;
+    }
+  }
+  th {
+    div {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+    }
+  }
+}
+.cursor {
+  cursor: pointer;
+}
+.pointer {
+  cursor: pointer;
+}
+/*单行超出*/
+.nowrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// dialog样式
+/deep/.el-dialog {
+  border-radius: 16px;
+  .el-dialog__header {
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 16px;
+  }
+}
+.collCommon {
+  /deep/.el-collapse-item__header {
+    background: none;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+  }
+  /deep/.el-collapse-item__arrow.el-icon-arrow-right {
+    display: none;
+  }
+  /deep/.el-collapse {
+    border: none;
+    border-top: none;
+  }
+  /deep/.el-collapse-item.is-active {
+    border: none;
+  }
+  /deep/.el-collapse-item__arrow {
+    margin: 0;
+  }
+
+  /deep/.el-collapse-item__wrap {
+    background: none;
+    border: none;
+  }
+  /deep/.el-checkbox__input .el-checkbox__inner {
+    width: 20px;
+    height: 20px;
+    .border-radius(10px);
+  }
+  /deep/.el-checkbox__input.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background: chartreuse;
+  }
+  /deep/.el-checkbox__input.is-checked .el-checkbox__inner::after {
+    transform: rotate(45deg) scale(1.5) translateX(2.5px) translateY(1px);
+  }
+  /deep/.el-checkbox__label {
+    color: #ffffff;
+  }
+  /deep/.el-checkbox__input.is-checked + .el-checkbox__label {
+    color: #ffffff;
+  }
+}
+/deep/.el-menu--collapse.el-menu {
+  .el-submenu__icon-arrow {
+    display: none !important;
+  }
+}
+// input样式
+/deep/.el-input {
+  .el-input__inner {
+    color: #000;
+  }
+  .el-input__inner:focus {
+    outline: none;
+    border-color: #dc5674;
+  }
+}
+/deep/.el-textarea {
+  .el-textarea__inner:focus {
+    outline: none;
+    border-color: #aaa;
+  }
+}
+
+.el-tooltip__popper {
+  max-width: 400px;
+  line-height: 180%;
+}
+// 鼠标hover动画
+.transform-scale {
+  transition: all 0.5s ease;
+}
+.transform-scale:hover {
+  // box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 10px 0px;
+  transition: all 0.5s ease;
+  transform: scale(1.02) translate(0px, 5px);
+}
+// checkbox 样式
+/deep/.el-checkbox {
+  .el-checkbox__input.is-checked + .el-checkbox__label {
+    color: #ef4873;
+  }
+  .el-checkbox__input.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #ef4873;
+    border-color: #ef4873;
+  }
+  .el-checkbox__inner:hover {
+    border-color: #ef4873;
+  }
+  .el-checkbox__input.is-focus .el-checkbox__inner {
+    border-color: #ef4873;
+  }
+}
+// radio样式
+/deep/.el-radio {
+  color: #fff;
+  .el-radio__input.is-checked {
+    .el-radio__inner {
+      background: #353f62;
+      background-color: #353f62;
+      border-color: #353f62;
+    }
+  }
+  .el-radio__label {
+    color: #000;
+  }
+  &.is-checked {
+    .el-radio__label {
+      color: #000;
+    }
+  }
+}
+.el-dropdown-menu {
+  .el-dropdown-menu__item:focus,
+  .el-dropdown-menu__item:not(.is-disabled):hover {
+    color: #e37890 !important;
+  }
+}
+
+// 分割线样式
+.split-line {
+  color: #999;
+}
+//通知样式
+.moafly-notify {
+  // width: auto;
+  align-items: center;
+  // background: #0f1b43;
+  // border: none;
+  padding: 15px;
+  .el-notification__content {
+    margin-top: 0;
+    text-align: left;
+  }
+  .moafly-icon {
+    font-size: 18px;
+    margin-top: 7px;
+  }
+}
+.hiti-messageBox {
+  background: #2f395d !important;
+  color: #dedede;
+  border: none;
+}
+.hiti-messageBox p {
+  .text(@size:16px, @color:#DEDEDE, @family: 'Lato-Medium', @weight:400, @align: '', @height:22px);
+}
+.messageBox-btn {
+  background-color: #ef4873 !important;
+  border: none;
+}
+
+.base-info-popover {
+  background: #ffffff;
+  box-shadow: 1px 1px 14px 0px rgba(16, 28, 70, 0.3);
+  border-radius: 8px;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 400;
+  color: #999999;
+  line-height: 24px;
+  // word-wrap: break-word;
+  // white-space: normal;
+  word-break: keep-all;
+  .el-popover__title {
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: 400;
+    color: #333333;
+    line-height: 24px;
+  }
+}
+
+// quasar 样式修改
+
+.text-purple {
+  color: #353f62 !important;
+}
+.text-moafly {
+  color: #353f62;
+}
+.bg-moafly {
+  background: #353f62;
+}
+/deep/.el-button {
+  .el-button--primary {
+    background-color: #dc5674;
+    border-color: #dc5674;
+  }
+}

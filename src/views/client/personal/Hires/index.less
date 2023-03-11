@@ -1,0 +1,39 @@
+.my-agent-container {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  .auto-load-box {
+    width: 100%;
+    height: 50px;
+  }
+  .no-more-text {
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #dc5674;
+    text-align: center;
+    width: 100%;
+  }
+  /deep/.el-loading-spinner {
+    .el-icon-loading {
+      color: #dc5674;
+    }
+    .el-loading-text {
+      color: #dc5674;
+    }
+  }
+}
+
+.empty-container {
+  min-height: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.pagination-container {
+  margin-top: 80px;
+}

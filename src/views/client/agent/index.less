@@ -1,0 +1,113 @@
+.agent-container {
+  width: 100%;
+  padding-top: 80px;
+  box-sizing: border-box;
+  .agent-banner {
+    width: 100%;
+    height: 225px;
+    background-color: #fff;
+    background: url('~@/assets/images/agent/agent-banner.png') no-repeat 0 0 / cover;
+    overflow: hidden;
+    .banner-content {
+      width: 1200px;
+      margin: 56px auto;
+      .text {
+        width: 660px;
+        font-size: 30px;
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 54px;
+      }
+    }
+  }
+  .agent-content {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .content-left {
+      width: 285px;
+      height: 500px;
+      margin-top: 34px;
+      .filter-by-container {
+        width: calc(100% - 15px);
+        margin: 22px 0 0 15px;
+        .filter-item {
+          width: 100%;
+          padding: 9px 0 9px 15px;
+          box-sizing: border-box;
+          position: relative;
+          cursor: pointer;
+        }
+        .filter-item.active::after {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          z-index: -1;
+          border-radius: 6px;
+          background: #e6e5ff;
+          animation: fadeInDown 0.3s 0s ease-in-out both;
+        }
+      }
+    }
+    .content-right {
+      width: 866px;
+      margin-top: 34px;
+      // 布局切换按钮
+      .layout-conver {
+        width: 100%;
+        height: 66px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      // 中介列表内容区域
+      .content-main {
+        width: 100%;
+      }
+      .content-main.list {
+        animation: fadeInDown 0.3s 0s ease-in-out both;
+      }
+      .content-main.image {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      /deep/.el-pagination {
+        height: 245px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .el-pager {
+          .number.active {
+            background-color: #353F62;
+          }
+          li:not(.disabled):hover {
+            color: #353F62;
+          }
+        }
+      }
+    }
+  }
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .agent-container {
+    .agent-banner {
+      .banner-content {
+        width: 62.5%;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.container {
+  padding: 16px 21px 16px 16px;
+  width: calc(100% - 37px);
+  @media (min-width: 768px) {
+    width: calc(50% - 67px);
+  }
+  min-height: 150px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  transition: border-color 0.3s;
+  &:not(:first-child) {
+    margin-bottom: 30px;
+  }
+  @media (min-width: 768px) {
+    &:not(:first-child) {
+      margin-left: 30px;
+      margin-bottom: 0;
+    }
+  }
+
+  .show-active {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 12px;
+    top: 12px;
+    border-radius: 50%;
+    border: 1px solid #999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s;
+
+    &::before {
+      display: block;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+  }
+
+  &.active {
+    border: 1px solid #dc5674;
+
+    .show-active {
+      border-color: #dc5674;
+
+      &::before {
+        background-color: #dc5674;
+      }
+    }
+  }
+
+  .label {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #dc5674;
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #dc5674;
+    visibility: hidden;
+    &.show {
+      visibility: visible;
+    }
+  }
+
+  .icon {
+    margin-top: 21px;
+    text-align: left;
+  }
+
+  .title {
+    text-align: left;
+    margin-top: 10px;
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0f1b43;
+  }
+
+  .description {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+}

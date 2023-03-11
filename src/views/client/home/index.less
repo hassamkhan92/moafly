@@ -1,0 +1,436 @@
+body {
+  font-family: 'Poppins';
+}
+
+.container {
+  position: relative;
+}
+
+.video {
+  /deep/.el-dialog__header {
+    display: none;
+  }
+
+  /deep/.el-dialog {
+    width: 100vw;
+    height: 70vh;
+  }
+
+  /deep/.w-video-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.section-header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffffff77;
+  position: absolute;
+  z-index: 1;
+
+  .logo {
+    img {
+      height: 60px;
+    }
+  }
+
+  .links {
+    display: flex;
+    min-width: 800px;
+    justify-content: space-between;
+    a {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 33px;
+      color: #000;
+    }
+  }
+}
+
+.section-home {
+  width: 100%;
+  margin: auto;
+  background: url(../../../assets/images/index/home.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+  padding: 130px 0 50px;
+  @media (min-width: 1200px) {
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  .top-agents-container {
+    max-width: 1440px;
+    width: calc(100% - 30px);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .top-agents {
+    max-width: 1022px;
+    width: calc(100% - 140px);
+    background-color: rgba(255, 255, 255, 0.8);
+    mix-blend-mode: normal;
+    border-radius: 4px;
+    border-left: 10px solid #ea4671;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 30px;
+    width: calc(100% - 100px);
+    @media (min-width: 1200px) {
+      padding: 80px 50px;
+      width: calc(100% - 140px);
+    }
+    .top-agents-title {
+      max-width: 908px;
+      width: 100%;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      color: #ea4671;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 30px;
+      @media (min-width: 1200px) {
+        font-size: 58px;
+        line-height: 64px;
+      }
+    }
+    .top-agents-text {
+      max-width: 932px;
+      width: 100%;
+      min-height: 88px;
+      font-weight: 400;
+      color: #000000;
+      font-size: 22px;
+      line-height: 28px;
+      @media (min-width: 1200px) {
+        font-size: 32px;
+        line-height: 38px;
+      }
+    }
+    button {
+      margin-top: 29px;
+      font-size: 18px;
+      line-height: 24px;
+      @media (min-width: 1200px) {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+  }
+}
+
+.search-container {
+  max-width: 1146px;
+  width: calc(100% - 60px);
+  background: #0f1b45;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  @media (min-width: 1200px) {
+    padding: 60px;
+    width: calc(100% - 120px);
+    margin-top: -120px;
+    position: relative;
+    z-index: 1;
+  }
+  .search {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 4px solid #fff;
+    .input {
+      width: calc(100% - 40px);
+      border: none;
+      outline: none;
+      font-weight: 400;
+      font-size: 23px;
+      line-height: 34px;
+      color: #000000;
+      background-color: #fff;
+      padding: 20px;
+      @media (min-width: 1200px) {
+        padding: 37px 32px;
+        flex: 1;
+      }
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      flex: 0 0 100%;
+      @media (min-width: 1200px) {
+        max-width: 280px;
+        flex: auto;
+      }
+    }
+  }
+}
+
+.section-agents {
+  max-width: 1440px;
+  width: calc(100% - 30px);
+  padding: 50px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 1200px) {
+    margin-top: 30px;
+    padding: 50px 15px 100px;
+  }
+  .agents-home {
+    max-width: 1435px;
+    width: 100%;
+    h4 {
+      font-weight: 700;
+      color: #000000;
+      font-size: 32px;
+      line-height: 38px;
+      @media (min-width: 1200px) {
+        font-size: 44px;
+        line-height: 50px;
+      }
+    }
+
+    ul {
+      width: 100%;
+      margin-top: 40px;
+      li {
+        display: flex;
+        .icon {
+          width: 19px;
+          height: 19px;
+          background-color: #ea4671;
+          margin-top: 10px;
+        }
+        .text {
+          max-width: 1392px;
+          width: 100%;
+          margin-left: 24px;
+          font-family: 'Libre Franklin';
+          font-weight: 500;
+          color: rgba(0, 0, 0, 0.8);
+          font-size: 18px;
+          line-height: 24px;
+          @media (min-width: 1200px) {
+            font-size: 32px;
+            line-height: 38px;
+          }
+        }
+
+        &:first {
+          margin-top: 23px;
+        }
+
+        &:not(:first-child) {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+
+  .agents-info {
+    width: 100%;
+    margin-top: 80px;
+    h4 {
+      font-weight: 700;
+      color: #000000;
+      font-size: 32px;
+      line-height: 38px;
+      @media (min-width: 1200px) {
+        font-size: 44px;
+        line-height: 50px;
+      }
+    }
+    .agents-info-content {
+      width: 100%;
+      margin-top: 48px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.section-sell {
+  width: 100%;
+  min-height: 792px;
+  background-color: rgba(18, 28, 61, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../../../../src/assets/images/index/pexels-rodnae-productions.png);
+    background-position: 50% 50%;
+    z-index: -1;
+  }
+
+  .list-my {
+    max-width: 660px;
+    width: 100%;
+    min-height: 550px;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    @media (min-width: 1200px) {
+      padding: 90px 75px;
+    }
+    .list-my-text {
+      font-weight: 700;
+      text-align: center;
+      color: #ffffff;
+      font-size: 26px;
+      line-height: 32px;
+      @media (min-width: 1200px) {
+        font-size: 40px;
+        line-height: 46px;
+      }
+    }
+    .list-my-small-text {
+      max-width: 434px;
+      width: 100%;
+      min-height: 90px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: center;
+      color: #ffffff;
+      margin: 16px auto;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+      text-transform: uppercase;
+      margin-top: 18px;
+    }
+
+    button {
+      margin-top: 56px;
+      font-size: 18px;
+      line-height: 24px;
+      @media (min-width: 1200px) {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+  }
+}
+// 房屋列表
+.home-info {
+  width: 100%;
+  position: relative;
+  .flex();
+  .centent {
+    max-width: 1440px;
+    width: calc(100% - 30px);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 100px auto 70px;
+    h4 {
+      font-weight: 700;
+      color: #000000;
+      font-size: 32px;
+      line-height: 38px;
+      @media (min-width: 1200px) {
+        font-size: 44px;
+        line-height: 50px;
+      }
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../../../assets/images/index/dots.png);
+    background-repeat: no-repeat;
+    background-position: 100% -58px;
+    z-index: -2;
+  }
+  .agent-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+.seen-info {
+  width: 100%;
+  .flex();
+  .centent {
+    max-width: 1440px;
+    width: 100%;
+    margin: 40px auto 100px;
+    h4 {
+      font-weight: 700;
+      color: #000000;
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 30px;
+      @media (min-width: 1200px) {
+        font-size: 44px;
+        line-height: 50px;
+      }
+    }
+    .seen-list {
+      width: 100%;
+      .flex();
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .seen-item {
+        height: 165.01px;
+        background: rgba(15, 27, 67, 0.05);
+        border-radius: 8px;
+        .flex();
+        width: 100%;
+        @media (min-width: 786px) {
+          width: 50%;
+        }
+        @media (min-width: 1200px) {
+          width: 25%;
+        }
+        img {
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

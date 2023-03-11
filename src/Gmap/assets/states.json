@@ -1,0 +1,352 @@
+[
+  {
+    "id": "1",
+    "abbr": "AL",
+    "state": "Alabama",
+    "alias": "阿拉巴马州",
+    "cap": "蒙哥马利"
+  },
+  {
+    "id": "2",
+    "abbr": "AK",
+    "state": "Alaska",
+    "alias": "阿拉斯加州",
+    "cap": "朱诺"
+  },
+  {
+    "id": 3,
+    "abbr": "AZ",
+    "state": "Arizona",
+    "alias": "亚利桑那州",
+    "cap": "凤凰城"
+  },
+  {
+    "id": 4,
+    "abbr": "AR",
+    "state": "Arkansas",
+    "alias": "阿肯色州",
+    "cap": "小石城"
+  },
+  {
+    "id": 5,
+    "abbr": "CA",
+    "state": "California",
+    "alias": "加利福尼亚州",
+    "cap": "萨克拉门托"
+  },
+  {
+    "id": 6,
+    "abbr": "CO",
+    "state": "Colorado",
+    "alias": "科罗拉多州",
+    "cap": "丹佛"
+  },
+  {
+    "id": 7,
+    "abbr": "CT",
+    "state": "Connecticut",
+    "alias": "康涅狄格州",
+    "cap": "哈特福德"
+  },
+  {
+    "id": 8,
+    "abbr": "DE",
+    "state": "Delaware",
+    "alias": "特拉华州",
+    "cap": "多佛"
+  },
+  {
+    "id": 9,
+    "abbr": "FL",
+    "state": "Florida",
+    "alias": "佛罗里达州",
+    "cap": "塔拉哈西"
+  },
+  {
+    "id": 10,
+    "abbr": "GA",
+    "state": "Georgia",
+    "alias": "佐治亚州",
+    "cap": "亚特兰大"
+  },
+  {
+    "id": 11,
+    "abbr": "HI",
+    "state": "Hawaii",
+    "alias": "夏威夷州",
+    "cap": "火奴鲁鲁"
+  },
+  {
+    "id": 12,
+    "abbr": "ID",
+    "state": "Idaho",
+    "alias": "爱达荷州",
+    "cap": "博伊西"
+  },
+  {
+    "id": 13,
+    "abbr": "IL",
+    "state": "Illinois",
+    "alias": "伊利诺伊州",
+    "cap": "斯普林菲尔德"
+  },
+  {
+    "id": 14,
+    "abbr": "IN",
+    "state": "Indiana",
+    "alias": "印第安纳州",
+    "cap": "印第安纳波利斯"
+  },
+  {
+    "id": 15,
+    "abbr": "IA",
+    "state": "Iowa",
+    "alias": "艾奥瓦州",
+    "cap": "得梅因"
+  },
+  {
+    "id": 16,
+    "abbr": "KS",
+    "state": "Kansas",
+    "alias": "堪萨斯州",
+    "cap": "托皮卡"
+  },
+  {
+    "id": 17,
+    "abbr": "KY",
+    "state": "Kentucky",
+    "alias": "肯塔基州",
+    "cap": "法兰克福"
+  },
+  {
+    "id": 18,
+    "abbr": "LA",
+    "state": "Lousiana",
+    "alias": "路易斯安那州",
+    "cap": "巴吞鲁日"
+  },
+  {
+    "id": 19,
+    "abbr": "ME",
+    "state": "Maine",
+    "alias": "缅因州",
+    "cap": "奥古斯塔"
+  },
+  {
+    "id": 20,
+    "abbr": "MD",
+    "state": "Maryland",
+    "alias": "马里兰州",
+    "cap": "安那波利斯"
+  },
+  {
+    "id": 21,
+    "abbr": "MA",
+    "state": "Massachusetts",
+    "alias": "麻萨诸塞州",
+    "cap": "波士顿"
+  },
+  {
+    "id": 22,
+    "abbr": "MI",
+    "state": "Michigan",
+    "alias": "密歇根州",
+    "cap": "兰辛"
+  },
+  {
+    "id": 23,
+    "abbr": "MN",
+    "state": "Minnesota",
+    "alias": "明尼苏达州",
+    "cap": "圣保罗"
+  },
+  {
+    "id": 24,
+    "abbr": "MS",
+    "state": "Mississippi",
+    "alias": "密西西比州",
+    "cap": "杰克逊"
+  },
+  {
+    "id": 25,
+    "abbr": "MO",
+    "state": "Missouri",
+    "alias": "密苏里州",
+    "cap": "杰弗逊城"
+  },
+  {
+    "id": 26,
+    "abbr": "MT",
+    "state": "Montana",
+    "alias": "蒙大拿州",
+    "cap": "海伦那"
+  },
+  {
+    "id": 27,
+    "abbr": "NE",
+    "state": "Nebraska",
+    "alias": "内布拉斯加州",
+    "cap": "林肯"
+  },
+  {
+    "id": 28,
+    "abbr": "NV",
+    "state": "Nevada",
+    "alias": "内华达州",
+    "cap": "卡森市"
+  },
+  {
+    "id": 29,
+    "abbr": "NH",
+    "state": "New Hampshire",
+    "alias": "新罕布什尔州",
+    "cap": "康科德"
+  },
+  {
+    "id": 30,
+    "abbr": "NJ",
+    "state": "New Jersey",
+    "alias": "新泽西州",
+    "cap": "特伦顿"
+  },
+  {
+    "id": 31,
+    "abbr": "NM",
+    "state": "New Mexico",
+    "alias": "新墨西哥州",
+    "cap": "圣大非"
+  },
+  {
+    "id": 32,
+    "abbr": "NY",
+    "state": "New York",
+    "alias": "纽约州",
+    "cap": "奥尔巴尼"
+  },
+  {
+    "id": 33,
+    "abbr": "NC",
+    "state": "North Carolina",
+    "alias": "北卡罗来纳州",
+    "cap": "罗利"
+  },
+  {
+    "id": 34,
+    "abbr": "ND",
+    "state": "North Dakota",
+    "alias": "北达科他州",
+    "cap": "俾斯麦"
+  },
+  {
+    "id": 35,
+    "abbr": "OH",
+    "state": "Ohio",
+    "alias": "俄亥俄州",
+    "cap": "哥伦布"
+  },
+  {
+    "id": 36,
+    "abbr": "OK",
+    "state": "Oklahoma",
+    "alias": "俄克拉何马州",
+    "cap": "俄克拉何马城"
+  },
+  {
+    "id": 37,
+    "abbr": "OR",
+    "state": "Oregon",
+    "alias": "俄勒冈州",
+    "cap": "塞勒姆"
+  },
+  {
+    "id": 38,
+    "abbr": "PA",
+    "state": "Pennsylvania",
+    "alias": "宾夕法尼亚州",
+    "cap": "哈里斯堡"
+  },
+  {
+    "id": 39,
+    "abbr": "RI",
+    "state": "Rhode Island",
+    "alias": "罗得岛州",
+    "cap": "普罗维登斯"
+  },
+  {
+    "id": 40,
+    "abbr": "SC",
+    "state": "South Carolina",
+    "alias": "南卡罗来纳州",
+    "cap": "哥伦比亚"
+  },
+  {
+    "id": 41,
+    "abbr": "SD",
+    "state": "South Dakota",
+    "alias": "南达科他州",
+    "cap": "皮尔"
+  },
+  {
+    "id": 42,
+    "abbr": "TN",
+    "state": "Tennessee",
+    "alias": "田纳西州",
+    "cap": "纳什维尔"
+  },
+  {
+    "id": 43,
+    "abbr": "TX",
+    "state": "Texas",
+    "alias": "得克萨斯州",
+    "cap": "奥斯汀"
+  },
+  {
+    "id": 44,
+    "abbr": "UT",
+    "state": "Utah",
+    "alias": "犹他州",
+    "cap": "盐湖城"
+  },
+  {
+    "id": 45,
+    "abbr": "VT",
+    "state": "Vermont",
+    "alias": "佛蒙特州",
+    "cap": "蒙比利埃"
+  },
+  {
+    "id": 46,
+    "abbr": "VA",
+    "state": "Virginia",
+    "alias": "弗吉尼亚州",
+    "cap": "里士满"
+  },
+  {
+    "id": 47,
+    "abbr": "WA",
+    "state": "Washington",
+    "alias": "华盛顿州",
+    "cap": "奥林匹亚"
+  },
+  {
+    "id": 48,
+    "abbr": "WV",
+    "state": "West Virginia",
+    "alias": "西弗吉尼亚州",
+    "cap": "查尔斯顿"
+  },
+  {
+    "id": 49,
+    "abbr": "WI",
+    "state": "Wisconsin",
+    "alias": "威斯康星州",
+    "cap": "麦迪逊"
+  },
+  {
+    "id": 50,
+    "abbr": "WY",
+    "state": "Wyoming",
+    "alias": "怀俄明州",
+    "cap": "夏延"
+  }
+]

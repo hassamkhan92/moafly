@@ -1,0 +1,27 @@
+.contract-item {
+  width: 100%;
+  min-height: 24px;
+  border: 1px solid rgba(15, 27, 67, 0.2);
+  border-radius: 2px;
+  margin-bottom: 6px;
+  padding: 4px 16px;
+  box-sizing: border-box;
+  .flex();
+  justify-content: flex-start;
+  .title {
+    width: 228px;
+    display: block;
+    .MoaflyText(400, 12px, 15px, rgba(15, 27, 67, 0.6));
+  }
+  .pay-type {
+    display: block;
+    width: 142px;
+    .MoaflyText(400, 12px, 15px, rgba(15, 27, 67, 0.6));
+  }
+  .status {
+    .MoaflyText(400, 12px, 15px, rgba(15, 27, 67, 0.2));
+  }
+  .active {
+    color: #fd9e46;
+  }
+}

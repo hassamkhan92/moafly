@@ -1,0 +1,291 @@
+@sm: 768px;
+
+.offer-container {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  padding: 88px 0 100px 0;
+
+  .house-info {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #afafaf;
+    height: 200px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    @media (min-width: @sm) {
+      flex-direction: row;
+      height: 118px;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .left,
+    .right {
+      .home-photo {
+        width: 130px;
+        height: 70px;
+      }
+
+      display: flex;
+      gap: 16px;
+      align-items: center;
+
+      .row-content {
+        margin-bottom: 12px;
+        font-size: 20px;
+        font-family: LibreFranklin-SemiBold, LibreFranklin;
+        font-weight: 600;
+        color: #333333;
+        line-height: 24px;
+      }
+
+      .row-header {
+        font-size: 16px;
+        font-family: LibreFranklin-Regular, LibreFranklin;
+        font-weight: 400;
+        color: #666666;
+        line-height: 19px;
+      }
+    }
+  }
+
+  .offer-process {
+    .title {
+      margin-top: 40px;
+      font-size: 36px;
+      font-family: LibreFranklin-SemiBold, LibreFranklin;
+      font-weight: 600;
+      color: #333333;
+      line-height: 44px;
+
+      &.text-center {
+        text-align: center;
+      }
+    }
+
+    .radio-button-group {
+      margin-top: 40px;
+    }
+
+    .hint {
+      width: 100%;
+      min-height: 91px;
+      background: #ffffff;
+      box-shadow: 0px 2px 14px 0px rgba(27, 23, 98, 0.15);
+      border-radius: 10px;
+      margin-top: 12px;
+      padding: 16px 24px;
+
+      .hint-title {
+        font-size: 16px;
+        font-family: LibreFranklin-SemiBold, LibreFranklin;
+        font-weight: 600;
+        color: #333333;
+        line-height: 19px;
+      }
+
+      .hint-text {
+        font-size: 16px;
+        font-family: LibreFranklin-Regular, LibreFranklin;
+        font-weight: 400;
+        color: #666666;
+        line-height: 19px;
+        margin-top: 4px;
+        text-align: justify;
+      }
+    }
+
+    &.step-2 {
+      width: 63%;
+      margin: auto;
+
+      .title {
+        margin-top: 158px;
+        margin-bottom: 48px;
+      }
+
+      .steps-info {
+        display: flex;
+        margin-top: 48px;
+        width: 100%;
+        justify-content: space-between;
+
+        .step-container {
+          width: 24%;
+          min-height: 336px;
+
+          .step-rounded {
+            margin-top: 50px;
+            width: 79px;
+            height: 79px;
+            background-color: #0f1b43;
+            font-size: 20px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .step-title {
+            margin-top: 24px;
+            font-size: 24px;
+            font-family: LibreFranklin-SemiBold, LibreFranklin;
+            font-weight: 600;
+            line-height: 29px;
+            color: #333333;
+          }
+
+          .step-text {
+            margin-top: 12px;
+            font-size: 20px;
+            font-family: LibreFranklin-Regular, LibreFranklin;
+            font-weight: 400;
+            color: #333333;
+            line-height: 24px;
+          }
+        }
+      }
+
+      .step-questions {
+        text-align: center;
+        margin-top: 12px;
+
+        .questions-hint {
+          margin-bottom: 0;
+          font-size: 20px;
+          font-family: LibreFranklin-Regular, LibreFranklin;
+          font-weight: 400;
+          color: #999999;
+          line-height: 24px;
+        }
+
+        .questions-phone {
+          margin-top: 8px;
+          font-size: 20px;
+          font-family: LibreFranklin-Regular, LibreFranklin;
+          font-weight: 400;
+          color: #ff9a1c;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .subtitle {
+      margin-top: 24px;
+      font-size: 20px;
+      font-family: LibreFranklin-Regular, LibreFranklin;
+      font-weight: 400;
+      color: #666666;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .extra {
+      margin-top: 12px;
+      background: #f5f5f5;
+      border-radius: 4px;
+      padding: 16px 13px;
+
+      .extra-title {
+        font-size: 19px;
+        font-family: LibreFranklin-Regular, LibreFranklin;
+        font-weight: 400;
+        color: #333333;
+        line-height: 24px;
+        text-align: center;
+
+        .optional {
+          color: #999;
+        }
+      }
+
+      .el-input {
+        margin-top: 8px;
+        padding: 0 22px;
+      }
+    }
+
+    .user-info-form {
+      max-width: 590px;
+      margin: 24px auto 0 auto !important;
+      margin-top: 24px;
+
+      .privacy{
+        color: #F7B500;
+      }
+
+      /deep/.el-form-item {
+        &.required {
+          .el-form-item__label::after {
+            content: '*';
+            color: #7a73ff;
+          }
+        }
+
+        &.optional {
+          .el-form-item__label::after {
+            content: ' (optional)';
+            color: #999;
+          }
+        }
+
+        .el-form-item__label {
+          font-size: 12px;
+          font-family: LibreFranklin-SemiBold, LibreFranklin;
+          font-weight: 600;
+          color: #333333;
+          line-height: 15px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+
+  .step-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 11px 0 13px 0;
+    border-top: 1px solid #afafaf;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: @sm) {
+      display: block;
+      text-align: right;
+
+      .next {
+        margin-right: 18.7%;
+      }
+    }
+
+    &>div {
+      display: inline-flex;
+    }
+
+    /deep/.back.w-button {
+      margin-right: 19px;
+
+      &:hover {
+        background-color: #fff !important;
+
+        * {
+          color: #999 !important;
+        }
+      }
+
+      .button-text {
+        .iconfont {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

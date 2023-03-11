@@ -1,0 +1,137 @@
+.search-container {
+  width: calc(100% - 30px);
+  height: 100%;
+  padding-top: 80px;
+  padding-left: 15px;
+  padding-right: 15px;
+  /deep/.search-header {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: -15px;
+    margin-right: -15px;
+    gap: 15px 0;
+    & > span {
+      padding-left: 15px;
+      padding-right: 15px;
+      flex: 0 0 calc(50% - 30px);
+      @media (min-width: 768px) {
+        flex: 0 0 calc(25% - 30px);
+      }
+      & > div {
+        width: 100%;
+      }
+      .el-popover__reference-wrapper {
+        button {
+          width: 100%;
+        }
+      }
+    }
+    .search-btn {
+      margin-left: 12px;
+    }
+  }
+  .search-content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    .search-content-left {
+      position: relative;
+      box-sizing: border-box;
+      padding-left: 15px;
+      padding-right: 15px;
+      height: 400px;
+      width: 100%;
+      margin-bottom: 30px;
+      @media (min-width: 1200px) {
+        height: calc(100vh - 80px);
+        width: calc(50% - 30px);
+        margin-bottom: 0;
+      }
+      /deep/.address-input {
+        position: absolute;
+        height: 40px;
+        background: #ffffff;
+        border-radius: 4px;
+        border: 1px solid #dddddd;
+        z-index: 2;
+        top: 50px;
+        left: 25px;
+        max-width: 190px;
+        @media (min-width: 1200px) {
+          top: 10px;
+          left: 200px;
+          max-width: 280px;
+        }
+        input {
+          padding-left: 15px;
+        }
+      }
+      #map {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+    .search-content-right {
+      width: calc(100% - 30px);
+      padding-left: 15px;
+      padding-right: 15px;
+      @media (min-width: 1200px) {
+        height: calc(100vh - 80px);
+        width: calc(50% - 30px);
+        overflow-y: scroll;
+      }
+      .handle-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        box-sizing: border-box;
+        padding-top: 5px;
+        z-index: 99;
+        p {
+          margin: 0;
+        }
+        .title {
+          font-size: 24px;
+          font-family: LibreFranklin-SemiBold, LibreFranklin;
+          font-weight: 600;
+          color: #333333;
+          line-height: 29px;
+          margin-bottom: 15px;
+          .count {
+            margin-top: 8px;
+            font-size: 16px;
+            font-family: LibreFranklin-Medium, LibreFranklin;
+            font-weight: 500;
+            color: #333333;
+            line-height: 19px;
+          }
+        }
+      }
+      // 内容区域
+      .content-container {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 150px);
+        overflow-y: auto;
+        /deep/.el-loading-mask {
+          height: 100%;
+          width: 100%;
+        }
+        .item-mask {
+          width: 100%;
+          height: 30px;
+        }
+      }
+      .content-Pagination {
+        margin-top: 30px;
+      }
+    }
+  }
+}
