@@ -87,23 +87,22 @@ export default {
     .left-side {
       width: 100%;
       @media (min-width: 992px) {
-        width: 20%;
+        width: 25%;
       }
-      height: 100%;
       border: 1px solid #ffffff;
       border-radius: 8px;
       background: url('~@/assets/images/sell/sell-side.png') no-repeat -6px;
     }
     .right-content {
       position: relative;
-      width: calc(100% - 122px);
+      width: 100%;
+      padding: 30px;
       @media (min-width: 992px) {
-        width: calc(80% - 122px);
+        width: calc(75% - 122px);
+        padding: 60px;
       }
-      height: 100%;
       border-radius: 8px;
       background: #ffffff;
-      padding: 60px;
       .sell-icon {
         position: absolute;
         left: 60px;

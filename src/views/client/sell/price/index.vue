@@ -2,7 +2,7 @@
   <div class="sell-price-container">
     <div class="title">What's your estimated selling price</div>
     <el-form class="content" :model="form" ref="myForm">
-      <MFormItem label="Estimated home value">
+      <MFormItem label="Estimated home value" class="estimate-home">
         <MInput prefix @input="onInput" v-model="form.housePrice"> <span class="unit" slot="prefix">$</span> </MInput>
         <div class="price-title-box">
           <p class="price-title">Moafly AI can estimate your home value</p>
@@ -128,7 +128,20 @@ p {
     margin-bottom: 40px;
   }
   .content {
-    width: 520px;
+    /deep/.estimate-home {
+      label {
+        position: relative;
+        text-align: left;
+        float: none;
+        display: inline-block;
+      }
+      .el-input {
+        width: 100% !important;
+        @media (min-width: 768px) {
+          max-width: 50%;
+        }
+      }
+    }
     .price-title-box {
       width: 100%;
       margin-top: 16px;
@@ -148,9 +161,6 @@ p {
   }
   .footer {
     display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 60px;
     .next-btn {
       margin-left: 20px;
     }

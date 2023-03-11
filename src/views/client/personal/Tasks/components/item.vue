@@ -12,11 +12,11 @@
         <div class="agentTitle">{{ parseTime(new Date(item.createTime), '{y}-{m}-{d}') }}</div>
         <div class="agentText">Hired：{{ item.hireNum }}</div>
       </el-col>
-      <el-col :xs="12" :sm="12" :lg="5" class="item-col3">
+      <el-col :xs="24" :sm="12" :lg="5" class="item-col3">
         <div class="agentTitle agentTitle-col3 ">Public task</div>
       </el-col>
-      <el-col :xs="1" :sm="1" :lg="1" class="item-col4"> </el-col>
-      <el-col :push="1" :xs="11" :sm="11" :lg="7" class="item-col5">
+      <el-col :xs="0" :sm="1" :lg="1" class="item-col4"> </el-col>
+      <el-col :push="1" :xs="24" :sm="11" :lg="7" class="item-col5">
         <div class="btn-text-box">
           <span @click="handlerView(item)" class="btn-task-text cursor">View task</span>
           <span @click="handlerEdit(item)" class="btn-Edit-text cursor">Edit </span>
@@ -135,7 +135,6 @@ export default {
     }
 
     .item-col5 {
-      padding-left: 70px !important;
       box-sizing: border-box;
       .btn-text-box {
         .btn-task-text {

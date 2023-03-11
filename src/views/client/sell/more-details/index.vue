@@ -35,7 +35,7 @@
         </MFormItem>
         <MFormItem label="Start Showing Date" prop="startShowDate">
           <!-- :picker-options="pickerOptionsS" -->
-          <MDate type="date" :width="314" v-model="form.startShowDate" ></MDate>
+          <MDate type="date" :width="314" v-model="form.startShowDate"></MDate>
         </MFormItem>
       </div>
       <div class="footer">
@@ -72,7 +72,7 @@ export default {
       if (!value) {
         callback(new Error('Phone is required '));
       } else {
-        console.log("this.phoneNumberError===>",this.phoneNumberError);
+        console.log('this.phoneNumberError===>', this.phoneNumberError);
         if (this.phoneNumberError) {
           callback(new Error('Error Phone'));
         }
@@ -204,6 +204,8 @@ export default {
   width: 100%;
   height: 100%;
   .title {
+    padding-left: 15px;
+    padding-right: 15px;
     margin-bottom: 40px;
     .text {
       .MoaflyText(700, 26px, 32px, #0f1b43);
@@ -221,7 +223,7 @@ export default {
       flex-wrap: wrap;
     }
     /deep/.phone-number {
-      width: 314px !important;
+      width: 100% !important;
       height: 56px;
       // 选择国家
       .select-country-container {
@@ -301,11 +303,41 @@ export default {
       }
     }
   }
+  .content {
+    padding-left: 15px;
+    padding-right: 15px;
+    .form-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0 -15px;
+      width: 100%;
+      /deep/ .el-form-item {
+        padding-left: 15px;
+        padding-right: 15px;
+        flex: 0 0 100%;
+        width: 100%;
+        @media (min-width: 768px) {
+          flex: 0 0 calc(50% - 30px);
+          width: calc(50% - 30px);
+        }
+        margin-bottom: 30px;
+        label {
+          position: relative;
+          text-align: left;
+          float: none;
+          display: inline-block;
+        }
+        .el-select,
+        .el-input,
+        .el-input-group {
+          width: 100% !important;
+        }
+      }
+    }
+  }
   .footer {
     display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 60px;
     .next-btn {
       margin-left: 20px;
     }

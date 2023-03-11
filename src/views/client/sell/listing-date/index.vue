@@ -12,10 +12,10 @@
           <MDate type="date" :picker-options="pickerOptionsE" placeholder="" :width="314" v-model="form.activeDate"></MDate>
         </MFormItem>
       </div>
-    </div>
-    <div class="footer">
-      <WButton radius="4px" text="Previous" color="#DC5674" border="1px solid #DC5674" width="100px" height="39px" bgColor="#fff" @handleClick="handlePre(5)"></WButton>
-      <WButton radius="4px" text="Next" v-throttle v-loading="loading" width="84px" height="39px" @handleClick="handleNext(6)" class="next-btn"></WButton>
+      <div class="footer">
+        <WButton radius="4px" text="Previous" color="#DC5674" border="1px solid #DC5674" width="100px" height="39px" bgColor="#fff" @handleClick="handlePre(5)"></WButton>
+        <WButton radius="4px" text="Next" v-throttle v-loading="loading" width="84px" height="39px" @handleClick="handleNext(6)" class="next-btn"></WButton>
+      </div>
     </div>
   </el-form>
 </template>
@@ -128,22 +128,44 @@ export default {
   width: 100%;
   height: 100%;
   .title {
+    padding-left: 15px;
+    padding-right: 15px;
     .MoaflyText(700, 26px, 32px, #0f1b43);
     margin-bottom: 40px;
   }
   .content {
+    padding-left: 15px;
+    padding-right: 15px;
     .form-content {
-      width: 340px;
-      .flex();
-      justify-content: space-between;
+      display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      margin: 0 -15px;
+      width: 100%;
+      /deep/ .el-form-item {
+        padding-left: 15px;
+        padding-right: 15px;
+        flex: 0 0 100%;
+        width: 100%;
+        @media (min-width: 768px) {
+          flex: 0 0 calc(50% - 30px);
+          width: calc(50% - 30px);
+        }
+        margin-bottom: 30px;
+        label {
+          position: relative;
+          text-align: left;
+          float: none;
+          display: inline-block;
+        }
+        .el-input {
+          width: 100% !important;
+        }
+      }
     }
   }
   .footer {
     display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 60px;
     .next-btn {
       margin-left: 20px;
     }

@@ -66,8 +66,14 @@ export default {
     width: calc(100% - 48px);
     padding: 40px 24px;
     background: none;
+    display: flex;
+    flex-wrap: wrap;
     .el-menu-item {
-      width: 280px;
+      width: 100%;
+      @media (min-width: 768px) and (max-width: 991.99px) {
+        padding: 0 15px;
+        width: calc(33.333% - 30px);
+      }
       height: 54px;
       margin-bottom: 5px;
       &:hover {

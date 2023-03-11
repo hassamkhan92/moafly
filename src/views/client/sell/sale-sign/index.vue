@@ -3,7 +3,7 @@
     <div class="title">Please choose your prefered for sale sign.</div>
     <div class="content">
       <el-row type="flex" justify="space-between" :gutter="20">
-        <el-col class="template-col" :span="12">
+        <el-col class="template-col" :xs="24" :span="12">
           <div class="tempalte template1" :class="form.salesignImgUrl == 1 ? 'active' : ''" @click="handleSelect(1)">
             <el-image :src="require('@/assets/images/sell/template2.png')" fit="fill" :lazy="true"></el-image>
             <img class="zoom-icon" @click="handlerSale(require('@/assets/images/sell/template2.png'))" :src="require('@/assets/svg/zoom.svg')" alt="" />
@@ -13,7 +13,7 @@
             <img class="zoom-icon" @click="handlerSale(require('@/assets/images/sell/template3.png'))" :src="require('@/assets/svg/zoom.svg')" alt="" />
           </div>
         </el-col>
-        <el-col class="template-col" :span="12">
+        <el-col class="template-col" :xs="24" :span="12">
           <div class="tempalte template3" :class="form.salesignImgUrl == 2 ? 'active' : ''" @click="handleSelect(2)">
             <el-image :src="require('@/assets/images/sell/template1.png')" fit="fill" :lazy="true"></el-image>
             <img class="zoom-icon" @click="handlerSale(require('@/assets/images/sell/template1.png'))" :src="require('@/assets/svg/zoom.svg')" alt="" />
@@ -117,18 +117,26 @@ export default {
     align-items: flex-start;
     /deep/.el-row {
       margin-top: 20px;
+      flex-wrap: wrap;
       &:first-child {
         margin-top: 0px;
       }
       .el-col {
         .tempalte {
           cursor: pointer;
-          width: 260.79px;
-          height: 172.42px;
+          width: 100%;
+          min-height: 172.42px;
+          @media (min-width: 768px) {
+            height: 172.42px;
+          }
           border-radius: 4px;
           box-sizing: border-box;
           position: relative;
           overflow: hidden;
+          .el-image {
+            width: 100%;
+            height: 100%;
+          }
           &.active::after {
             position: absolute;
             content: ' ';
@@ -147,10 +155,17 @@ export default {
             width: 25px;
             height: 25px;
           }
+          &.template3 {
+            @media (min-width: 768px) {
+              height: 344.84px !important;
+            }
+          }
           img {
             width: 100%;
             height: 100%;
             transition: all 0.5s;
+
+            object-fit: contain;
             // &:hover {
             //   transform: scale(1.5);
             // }
@@ -159,21 +174,12 @@ export default {
         .template3 {
           margin-top: 2px;
         }
-        .template3 {
-          width: 245.7px;
-          height: 347px;
-        }
       }
-    }
-    .template-col {
-      height: 160px;
     }
   }
   .footer {
     display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 60px;
+    margin-top: 30px;
     .next-btn {
       margin-left: 20px;
     }

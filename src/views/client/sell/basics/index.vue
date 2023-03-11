@@ -4,67 +4,67 @@
     <div class="content">
       <div class="form-content">
         <MFormItem label="HOA" prop="hoa">
-          <MSelect :isSlot="true" :width="314" v-model="form.hoa">
+          <MSelect :isSlot="true" v-model="form.hoa">
             <el-option v-for="(item, idx) in systemList.SeniorCommunity" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Living Area" prop="livingArea">
-          <MInput :width="314" append v-model="form.livingArea">
+          <MInput append v-model="form.livingArea">
             <span slot="append">Sq Ft</span>
           </MInput>
         </MFormItem>
         <MFormItem label="Beds Total" prop="bedsTotal">
-          <MSelect :isSlot="true" :width="314" v-model="form.bedsTotal">
+          <MSelect :isSlot="true" v-model="form.bedsTotal">
             <el-option v-for="(item, idx) in beds" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Baths" prop="baths">
-          <MSelect :isSlot="true" :width="314" v-model="form.baths">
+          <MSelect :isSlot="true" v-model="form.baths">
             <el-option v-for="(item, idx) in baths" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Common Interest">
-          <MSelect :isSlot="true" :width="314" v-model="form.commonInsert">
+          <MSelect :isSlot="true" v-model="form.commonInsert">
             <el-option v-for="(item, idx) in systemList.CommonInterest" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Property Subtype">
-          <MSelect :isSlot="true" :width="314" v-model="form.propertySubtype">
+          <MSelect :isSlot="true" v-model="form.propertySubtype">
             <el-option v-for="(item, idx) in propertySubtypeList" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Lot Size">
-          <MInput :width="314" append v-model="form.lotSize"> <span slot="append">Sq Ft</span></MInput>
+          <MInput append v-model="form.lotSize"> <span slot="append">Sq Ft</span></MInput>
         </MFormItem>
         <MFormItem label="Number of Units">
-          <MSelect :isSlot="true" :width="314" v-model="form.numberUnits">
+          <MSelect :isSlot="true" v-model="form.numberUnits">
             <el-option v-for="(item, idx) in beds" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Garage Spaces">
-          <MSelect :isSlot="true" :width="314" v-model="form.garageSpaces">
+          <MSelect :isSlot="true" v-model="form.garageSpaces">
             <el-option v-for="(item, idx) in beds" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Senior Community">
-          <MSelect :isSlot="true" :width="314" v-model="form.seniorCommunity">
+          <MSelect :isSlot="true" v-model="form.seniorCommunity">
             <el-option v-for="(item, idx) in systemList.SeniorCommunity" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Structure Types">
-          <MSelect :isSlot="true" :width="314" v-model="form.structureType">
+          <MSelect :isSlot="true" v-model="form.structureType">
             <el-option v-for="(item, idx) in structureTypes" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
         <MFormItem label="Levels">
-          <MSelect :isSlot="true" :width="314" v-model="form.levels">
+          <MSelect :isSlot="true" v-model="form.levels">
             <el-option v-for="(item, idx) in systemList.Levels" :key="idx" :label="item" :value="item"> </el-option>
           </MSelect>
         </MFormItem>
       </div>
       <div class="footer">
         <WButton radius="4px" text="Previous" color="#DC5674" border="1px solid #DC5674" width="100px" height="39px" bgColor="#fff" @handleClick="handlePre(3)"></WButton>
-        <WButton radius="4px" text="Next" v-throttle v-loading="loading"  width="84px" height="39px" @handleClick="handleNext" class="next-btn"></WButton>
+        <WButton radius="4px" text="Next" v-throttle v-loading="loading" width="84px" height="39px" @handleClick="handleNext" class="next-btn"></WButton>
       </div>
     </div>
   </el-form>
@@ -77,7 +77,7 @@ import WButton from '@/components/Button';
 import * as api from '@/api';
 import selectData from '@/util/select';
 import { mapGetters } from 'vuex';
-import { listAssign, viladStep} from '@/util/index';
+import { listAssign, viladStep } from '@/util/index';
 export default {
   components: { WButton, MFormItem, MSelect, MInput },
   data() {
@@ -189,22 +189,45 @@ export default {
   width: 100%;
   height: 100%;
   .title {
+    padding-left: 15px;
+    padding-right: 15px;
     .MoaflyText(700, 26px, 32px, #0f1b43);
     margin-bottom: 40px;
   }
   .content {
+    padding-left: 15px;
+    padding-right: 15px;
     .form-content {
-      width: 668px;
-      .flex();
-      justify-content: space-between;
+      display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      margin: 0 -15px;
+      width: 100%;
+      /deep/ .el-form-item {
+        padding-left: 15px;
+        padding-right: 15px;
+        flex: 0 0 100%;
+        width: 100%;
+        @media (min-width: 768px) {
+          flex: 0 0 calc(50% - 30px);
+          width: calc(50% - 30px);
+        }
+        margin-bottom: 30px;
+        label {
+          position: relative;
+          text-align: left;
+          float: none;
+          display: inline-block;
+        }
+        .el-select,
+        .el-input-group {
+          width: 100% !important;
+        }
+      }
     }
   }
   .footer {
     display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 60px;
     .next-btn {
       margin-left: 20px;
     }

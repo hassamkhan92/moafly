@@ -1,27 +1,31 @@
 <template>
   <div class="sell-address-container">
     <el-form ref="myForm" label-position="top" class="adress-form" label-width="0" :rules="rules" :model="form">
-      <div class="title">Which home are you selling?</div>
-      <MFormItem label="Addres" prop="houseAddress">
-        <AddressInput v-model="form.houseAddress"></AddressInput>
-      </MFormItem>
-      <div v-if="formDatailIsShow" class="form-content">
-        <MFormItem label="City" prop="houseCity">
-          <MInput :width="187" v-model="form.houseCity"></MInput>
+      <div class="content">
+        <div class="title">Which home are you selling?</div>
+        <MFormItem label="Addres" prop="houseAddress" class="full-field">
+          <AddressInput v-model="form.houseAddress"></AddressInput>
         </MFormItem>
-        <MFormItem label="State" prop="houseState">
-          <MSelect :width="187" :isSlot="true" v-model="form.houseState">
-            <el-option v-for="(item, idx) in stateList" :key="idx" :label="item.abbr" :value="item.abbr"> </el-option>
-          </MSelect>
-        </MFormItem>
-        <MFormItem label="Unit">
-          <MInput :width="187" v-model="form.houseUnit"></MInput>
-        </MFormItem>
-        <MFormItem label="ZIP Code" prop="zipCode">
-          <MInput :width="187" v-model="form.zipCode"></MInput>
-        </MFormItem>
+        <div v-if="formDatailIsShow" class="form-content">
+          <MFormItem label="City" prop="houseCity">
+            <MInput :width="187" v-model="form.houseCity"></MInput>
+          </MFormItem>
+          <MFormItem label="State" prop="houseState">
+            <MSelect :width="187" :isSlot="true" v-model="form.houseState">
+              <el-option v-for="(item, idx) in stateList" :key="idx" :label="item.abbr" :value="item.abbr"> </el-option>
+            </MSelect>
+          </MFormItem>
+          <MFormItem label="Unit">
+            <MInput :width="187" v-model="form.houseUnit"></MInput>
+          </MFormItem>
+          <MFormItem label="ZIP Code" prop="zipCode">
+            <MInput :width="187" v-model="form.zipCode"></MInput>
+          </MFormItem>
+        </div>
+        <div class="footer">
+          <WButton radius="6px" text="Next" v-throttle v-loading="loading" width="84px" height="39px" @handleClick="handleNext()"></WButton>
+        </div>
       </div>
-      <WButton radius="6px" text="Next" v-throttle v-loading="loading" width="84px" height="39px" @handleClick="handleNext()"></WButton>
     </el-form>
     <div class="map-container">
       <Map @complete="mapComplete"></Map>
@@ -205,13 +209,50 @@ export default {
   justify-content: space-between;
   .adress-form {
     width: 100%;
+    margin-bottom: 30px;
     @media (min-width: 768px) {
       width: calc(100% - 365px);
+      margin-bottom: 0;
     }
-    .form-content {
-      .flex();
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .content {
+      padding-left: 15px;
+      padding-right: 15px;
+      .full-field {
+        .el-input {
+          width: 100% !important;
+        }
+      }
+      .form-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 -15px;
+        width: 100%;
+        @media (min-width: 768px) {
+          width: auto;
+        }
+        /deep/ .el-form-item {
+          padding-left: 15px;
+          padding-right: 15px;
+          flex: 0 0 100%;
+          width: 100%;
+          @media (min-width: 768px) {
+            flex: 0 0 calc(50% - 30px);
+            width: calc(50% - 30px);
+          }
+          margin-bottom: 30px;
+          label {
+            position: relative;
+            text-align: left;
+            float: none;
+            display: inline-block;
+          }
+          .el-select,
+          .el-input {
+            width: 100% !important;
+          }
+        }
+      }
     }
   }
   .map-container {
@@ -236,11 +277,6 @@ export default {
   .title {
     .MoaflyText(700, 26px, 32px, #0f1b43);
     margin-bottom: 40px;
-  }
-  .w-button {
-    position: absolute;
-    right: 0;
-    bottom: 60px;
   }
   label.req::before {
     content: '* ';

@@ -10,8 +10,6 @@
           type="textarea"
           placeholder="Please enter the content"
           v-model="form.houseDescrible"
-          :width="668"
-          :height="400"
           :maxlength="2500"
           :show-word-limit="true"
           :minlength="100"
@@ -133,10 +131,21 @@ p {
     margin-bottom: 40px;
   }
   .content {
-    width: 814px;
+    width: 100%;
+    margin-bottom: 30px;
     .moafly-try-title {
       .MoaflyText(400, 14px, 17px, rgba(15, 27, 67, 0.6));
       margin-bottom: 16px;
+    }
+    /deep/ .el-textarea {
+      width: 100% !important;
+      height: auto !important;
+      textarea {
+        width: 100% !important;
+        min-height: 200px !important;
+        height: auto !important;
+        padding: 15px !important;
+      }
     }
     .auto-handle {
       color: #dc5674;
@@ -145,9 +154,6 @@ p {
   }
   .footer {
     display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 60px;
     .next-btn {
       margin-left: 20px;
     }

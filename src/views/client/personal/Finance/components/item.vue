@@ -15,7 +15,7 @@
           {{ item.agentPhoneNum }}
         </div>
       </el-col>
-      <el-col :xs="12" :sm="12" :lg="9" class="item-col3">
+      <el-col :xs="24" :sm="12" :lg="9" class="item-col3">
         <div class="col3-title-box">
           <span class="agentTitle title1">${{ item.orderMoney }}</span>
           <span v-if="item.orderStatus === 0" class="to-pay-title title2 cursor" @click="handlerPay(item)">To be paid</span>
@@ -25,8 +25,8 @@
           emma@moafly.com
         </div>
       </el-col>
-      <el-col :xs="1" :sm="1" class="item-col4"> </el-col>
-      <el-col :push="1" :xs="11" :sm="11" :lg="3" class="item-col5">
+      <el-col :xs="0" :sm="1" class="item-col4"> </el-col>
+      <el-col :push="1" :xs="12" :sm="11" :lg="3" class="item-col5">
         <el-popover placement="bottom-end" trigger="click" popper-class="billings-popover" @show="show" @hide="hide">
           <div class="bill-detail">
             <p class="detail-title">Billing detail</p>

@@ -109,7 +109,7 @@ export default {
       }
       .view_proposals_tabs_box {
         width: 100%;
-        height: 59px;
+        min-height: 59px;
         .flex();
         justify-content: flex-start;
         .view_proposals_text {

@@ -213,16 +213,13 @@ export default {
   height: 100%;
   .footer {
     display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 60px;
+    margin-top: 30px;
     .next-btn {
       margin-left: 20px;
     }
   }
 }
 .content {
-  width: 537px;
   .title {
     margin-bottom: 40px;
     .text {

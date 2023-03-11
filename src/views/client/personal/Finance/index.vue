@@ -309,14 +309,12 @@ export default {
   .hire_header {
     width: 100%;
     margin-bottom: 15px;
-    .flex();
-    justify-content: flex-start;
     .hire_header_select_box {
-      padding-right: 60px;
-      .flex();
+      max-width: 280px;
+      width: 100%;
       /deep/.search-input {
         .el-input__inner {
-          width: 280px;
+          width: 100%;
           height: 36px;
           background: #ffffff;
           border: 1px solid rgba(15, 27, 67, 0.2);

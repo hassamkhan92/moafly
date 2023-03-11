@@ -253,6 +253,10 @@ export default {
       line-height: 19px;
       color: #0f1b43;
     }
+    /deep/ .el-input {
+      max-width: 390px;
+      width: 100% !important;
+    }
     .example_title {
       font-family: 'Libre Franklin';
       font-style: normal;

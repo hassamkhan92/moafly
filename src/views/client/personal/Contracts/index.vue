@@ -7,16 +7,16 @@ relationState 合同状态 1 active 2   3 pedding
   <div v-loading="loading" class="hiring-history-container" :class="{ 'hireing-empty': listData.length === 0 }">
     <div v-infinite-scroll="infineLoad" infinite-scroll-disabled="autoLoading" infinite-scroll-distance="10" class="content">
       <el-row type="flex" :key="index" v-for="(item, index) in listData" class="hire_q_item" :class="'el-row-' + item.id">
-        <el-col :xs="12" :sm="24" :lg="3" class="item-col1">
+        <el-col :xs="24" :sm="24" :lg="3" class="item-col1">
           <img class="hire_image" :src="item.agentHeaderImg" alt="" />
         </el-col>
-        <el-col :xs="12" :sm="8" :lg="6" class="col-flex item-col2">
+        <el-col :xs="12" :sm="6" :lg="6" class="col-flex item-col2">
           <div class="agentTitle">{{ item.agentName }}</div>
           <div class="agentText">
             {{ item.inviteTitle }}
           </div>
         </el-col>
-        <el-col :xs="12" :sm="4" :lg="3" class="col-flex item-col3">
+        <el-col :xs="12" :sm="6" :lg="3" class="col-flex item-col3">
           <!-- 按小时 -->
           <template v-if="item.payType === 0">
             <div class="agentText">Hourly</div>
@@ -31,12 +31,12 @@ relationState 合同状态 1 active 2   3 pedding
             <div v-if="item.relationState === 2" class="agentText">Completed</div>
           </template>
         </el-col>
-        <el-col :xs="12" :sm="5" :lg="5" class="col-flex item-col4">
+        <el-col :xs="24" :sm="5" :lg="5" class="col-flex item-col4">
           <div class="agentText nowrap">Los Angeles, California</div>
           <div class="agentText">{{ parseTime(new Date(item.createTime), '{y}-{m}-{d} {h}:{i}') }}</div>
         </el-col>
-        <el-col :xs="1" :sm="1" :lg="1" class="item-line"></el-col>
-        <el-col :xs="12" :sm="6" :lg="6" class="item-col5">
+        <el-col :xs="0" :sm="1" :lg="1" class="item-line"></el-col>
+        <el-col :xs="24" :sm="6" :lg="6" class="item-col5">
           <!-- 按小时 -->
           <w-button
             v-if="item.relationState === 1"
@@ -294,7 +294,7 @@ export default {
     .flex();
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 10px 0 !important;
+    padding: 10px 5px !important;
     box-sizing: border-box;
   }
   .item-col1 {
@@ -311,12 +311,18 @@ export default {
     margin-left: -10px;
   }
   .item-col5 {
-    .flex();
-    .rate-box {
-      width: 180px;
+    @media (min-width: 768px) {
       .flex();
-      justify-content: space-between;
-      padding-left: 31px;
+    }
+    .rate-box {
+      max-width: 180px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      @media (min-width: 768px) {
+        padding-left: 15px;
+      }
       /deep/.el-rate__icon {
         font-size: 16px;
       }
@@ -327,6 +333,7 @@ export default {
         border-radius: 6px;
         .MoaflyText(400, 12px, 15px, #ffffff);
         text-align: center;
+        margin-left: 10px;
       }
     }
   }
