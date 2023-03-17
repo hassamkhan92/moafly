@@ -144,7 +144,7 @@ export default {
           this.$loading.close();
           console.log('this.pdfDataUri===>', res);
           // window.open(res);
-          this.download(res,'Moafly Contract')
+          this.download(res, 'Moafly Contract');
         }, 1000);
       });
     },
@@ -378,6 +378,10 @@ export default {
 </script>
 <style scoped lang="less">
 .contract-dialog {
+  /deep/.my-dialog {
+    max-width: 600px;
+    width: 100% !important;
+  }
   .content {
     width: 100%;
     box-shadow: 11px 11px 42px 0px rgba(27, 23, 98, 0.15);

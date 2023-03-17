@@ -257,7 +257,8 @@ export default {
 <style lang="less"></style>
 <style lang="less" scoped>
 /deep/.el-dialog {
-  width: 500px;
+  max-width: 500px !important;
+  width: 100% !important;
   height: 636px;
   border-radius: 16px;
   .el-dialog__body {

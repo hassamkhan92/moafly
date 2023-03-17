@@ -17,7 +17,7 @@
       </div>
       <div class="btn-box">
         <WButton class="profile" radius="6px" text="Download receipt" color="#DC5674" border="1px solid #DC5674" @handleClick="handlerDowload" width="166px" height="27px" bgColor="#fff"></WButton>
-        <WButton style="margin-left:25px" class="profile" v-throttle radius="6px" text="Back to Dashboard" @handleClick="handlerPathDash" width="166px" height="27px"></WButton>
+        <WButton class="profile" v-throttle radius="6px" text="Back to Dashboard" @handleClick="handlerPathDash" width="166px" height="27px"></WButton>
       </div>
     </div>
   </div>
@@ -52,8 +52,9 @@ export default {
   padding-top: 159px;
   box-sizing: border-box;
   .content {
-    width: 1308px;
-    height: 697px;
+    max-width: 1308px;
+    width: 100%;
+    min-height: 697px;
     margin: 0 auto;
     background: #ffffff;
     border: 1px solid #e0e0e0;
@@ -83,6 +84,17 @@ export default {
       width: 100%;
       margin: 90px auto 0;
       .flex();
+      /deep/ div {
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+        @media (max-width: 575px) {
+          width: 100% !important;
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+        }
+      }
     }
   }
 }

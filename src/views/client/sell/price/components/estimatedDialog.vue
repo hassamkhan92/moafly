@@ -7,29 +7,36 @@
       <!-- 内容 -->
       <div class="result-content">
         <div class="title-box">
-          <p class="title title1">{{ homeInfo.houseAddress }}</p>
-          <p class="title title2">{{ homeInfo.houseCity }}</p>
+          <p class="title title1">{{ homeInfo.houseAddress }}, {{ homeInfo.houseCity }}</p>
         </div>
         <!-- 价格显示 -->
         <div class="result-price">
           <p class="price-name">Your home value</p>
           <div class="price-text">
-            <span class="text1">moafly estimate </span>
-            <el-tooltip :hide-after="0" popper-class="price-tootip" class="item pointer" effect="light" placement="bottom-start">
-              <div slot="content">{{ tipContent }}<span class="tootip-title-learn">Learn more.</span></div>
-              <img class="img-question" :src="require('@/assets/images/agent/question.png')" alt="" />
-            </el-tooltip>
-            <p class="line-row"></p>
-            <span class="text4"> ${{ homePrice !== 'N/A' ? numberFormat(homePrice) : homePrice }}</span>
+            <div class="price-box-left">
+              <span class="text1">Moafly Estimate </span>
+              <el-tooltip :hide-after="0" popper-class="price-tootip" class="item pointer" effect="light" placement="bottom-start">
+                <div slot="content">{{ tipContent }}<span class="tootip-title-learn">Learn more.</span></div>
+                <img class="img-question" :src="require('@/assets/images/agent/question.png')" alt="" />
+              </el-tooltip>
+            </div>
+            <div class="price-box-right">
+              <p class="line-row"></p>
+              <span class="text4"> ${{ homePrice !== 'N/A' ? numberFormat(homePrice) : homePrice }}</span>
+            </div>
           </div>
           <div class="price-text">
-            <span class="text1">zillow estimate </span>
-            <el-tooltip :hide-after="0" popper-class="price-tootip" class="item pointer" effect="light" placement="bottom-start">
-              <div slot="content">{{ tipContent }}<span class="tootip-title-learn">Learn more.</span></div>
-              <img class="img-question" :src="require('@/assets/images/agent/question.png')" alt="" />
-            </el-tooltip>
-            <p class="line-row"></p>
-            <span class="text4"> ${{ homePrice !== 'N/A' ? numberFormat(zestimate) : zestimate }}</span>
+            <div class="price-box-left">
+              <span class="text1">Zillow Estimate </span>
+              <el-tooltip :hide-after="0" popper-class="price-tootip" class="item pointer" effect="light" placement="bottom-start">
+                <div slot="content">{{ tipContent }}<span class="tootip-title-learn">Learn more.</span></div>
+                <img class="img-question" :src="require('@/assets/images/agent/question.png')" alt="" />
+              </el-tooltip>
+            </div>
+            <div class="price-box-right">
+              <p class="line-row"></p>
+              <span class="text4"> ${{ homePrice !== 'N/A' ? numberFormat(zestimate) : zestimate }}</span>
+            </div>
           </div>
         </div>
         <!-- <p @click="handlerSellHere" class="view-home-title cursor">
@@ -161,8 +168,12 @@ p {
   .result-main {
     position: relative;
     box-sizing: border-box;
-    width: 990px;
-    height: 568px;
+    max-width: 990px;
+    min-height: 568px;
+    @media (min-width: 768px) {
+      max-height: 568px;
+      height: 100%;
+    }
     background: #ffffff;
     border-radius: 16px;
     .flex();
@@ -175,40 +186,71 @@ p {
       z-index: 10;
     }
     .header-bg {
-      width: 406px;
-      height: 100%;
       background-image: url('~@/assets/images/estimate/estimate.png');
       background-size: 100% 100%;
+      width: 100%;
+      height: 250px;
+      @media (min-width: 768px) {
+        max-width: 406px;
+        width: 100%;
+        height: 100%;
+      }
     }
     .result-content {
-      width: calc(100% - 406px);
+      width: 100%;
+      @media (min-width: 768px) {
+        width: calc(100% - 406px);
+        height: 100%;
+      }
       height: 100%;
       background: radial-gradient(98.74% 100% at 48.51% 0%, rgba(255, 255, 255, 0.15) 29.69%, rgba(220, 87, 117, 0.0045) 99.99%, rgba(220, 86, 116, 0.012) 100%);
       backdrop-filter: blur(5px);
-      padding: 120px 0 0 24px;
+      padding: 20px;
       box-sizing: border-box;
       .title-box {
+        margin-bottom: 20px;
         .title {
-          .MoaflyText(500, 34px, 40px, #0f1b43);
+          .MoaflyText(500, 24px, 30px, #0f1b43);
+          @media (min-width: 768px) {
+            .MoaflyText(500, 34px, 40px, #0f1b43);
+          }
         }
         .title3 {
           font-size: 28px;
         }
       }
       .result-price {
-        margin-top: 47px;
         .price-name {
-          .MoaflyText(500, 28px, 40px, #0f1b43);
+          .MoaflyText(500, 20px, 26px, #0f1b43);
+          @media (min-width: 768px) {
+            .MoaflyText(500, 28px, 40px, #0f1b43);
+          }
+          margin-bottom: 12px;
         }
         .price-text {
+          padding: 0 16px;
+          margin-bottom: 15px;
           .flex();
-          justify-content: flex-start;
+          justify-content: space-between;
           .text1 {
-            .MoaflyText(400, 24px, 40px, #0f1b43);
+            .MoaflyText(400, 16px, 22px, #0f1b43);
+            @media (min-width: 768px) {
+              .MoaflyText(400, 24px, 40px, #0f1b43);
+            }
+          }
+          .price-box-left {
+            flex: 0 0 49%;
+            display: flex;
+            align-items: center;
+          }
+          .price-box-right {
+            flex: 0 0 49%;
+            align-items: center;
+            display: flex;
           }
           .line-row {
             margin-left: 24px;
-            width: 150px;
+            flex: 1;
             height: 0;
             border: 1px dashed #e1e3e7;
           }
@@ -219,8 +261,11 @@ p {
             border-color: #dc5674 !important;
           }
           .text4 {
-            margin-left: 24px;
-            .MoaflyText(500, 24px, 40px, #0f1b43);
+            margin-left: 15px;
+            .MoaflyText(400, 16px, 22px, #0f1b43);
+            @media (min-width: 768px) {
+              .MoaflyText(400, 24px, 40px, #0f1b43);
+            }
           }
         }
       }

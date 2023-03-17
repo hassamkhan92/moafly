@@ -104,9 +104,7 @@ export default {
       border-radius: 8px;
       background: #ffffff;
       .sell-icon {
-        position: absolute;
-        left: 60px;
-        top: 40px;
+        padding: 0 15px;
       }
     }
   }

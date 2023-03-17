@@ -1,5 +1,5 @@
 <template>
-  <MoaflyDialog class="remove-card-dialog" width="600px" :visible.sync="visible" title="Remove card">
+  <MoaflyDialog class="remove-card-dialog" :visible.sync="visible" title="Remove card">
     <div class="form-box">
       <div class="prompt-box">
         <div class="img-box"><img class="prompt-icon" :src="require('@/assets/images/wallet/prompt-icon.png')" alt="" /></div>
@@ -67,7 +67,9 @@ p {
 }
 .remove-card-dialog {
   /deep/.el-dialog {
-    height: 384px;
+    max-width: 600px;
+    width: 100%;
+    min-height: 384px;
   }
   .form-box {
     .prompt-box {

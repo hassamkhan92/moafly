@@ -8,32 +8,44 @@
 -->
 <template>
   <div class="detail_info-basis">
-    <el-row :gutter="20">
-      <el-col :xs="12" :md="8" :lg="4">
-        <p class="title text-left">Beds</p>
-        <p class="text text-left">{{ homeDetail.bedsTotal || '-' }}</p>
+    <el-row :gutter="20" class="details-box">
+      <el-col :xs="24" :sm="12" :md="8" :lg="4">
+        <div class="detail-wrap">
+          <p class="title text-left">Beds</p>
+          <p class="text text-left">{{ homeDetail.bedsTotal || '-' }}</p>
+        </div>
       </el-col>
-      <el-col :xs="12" :md="8" :lg="4">
-        <p class="title text-left">Baths</p>
-        <p class="text text-left">{{ homeDetail.baths || '-' }}</p>
+      <el-col :xs="24" :sm="12" :md="8" :lg="4">
+        <div class="detail-wrap">
+          <p class="title text-left">Baths</p>
+          <p class="text text-left">{{ homeDetail.baths || '-' }}</p>
+        </div>
       </el-col>
-      <el-col :xs="12" :md="8" :lg="4">
-        <p class="title text-left">Home size</p>
-        <p v-if="numberFormat(homeDetail.livingArea)" class="text">{{ numberFormat(homeDetail.livingArea) }} sq. ft.</p>
-        <p v-else class="text text-left">-</p>
+      <el-col :xs="24" :sm="12" :md="8" :lg="4">
+        <div class="detail-wrap">
+          <p class="title text-left">Home size</p>
+          <p v-if="numberFormat(homeDetail.livingArea)" class="text">{{ numberFormat(homeDetail.livingArea) }} sq. ft.</p>
+          <p v-else class="text text-left">-</p>
+        </div>
       </el-col>
-      <el-col :xs="12" :md="8" :lg="4">
-        <p class="title text-left">Lot size</p>
-        <p v-if="homeDetail.lotSize" class="text">{{ homeDetail.lotSize }} sq. ft.</p>
-        <p v-else class="text text-left">-</p>
+      <el-col :xs="24" :sm="12" :md="8" :lg="4">
+        <div class="detail-wrap">
+          <p class="title text-left">Lot size</p>
+          <p v-if="homeDetail.lotSize" class="text">{{ homeDetail.lotSize }} sq. ft.</p>
+          <p v-else class="text text-left">-</p>
+        </div>
       </el-col>
-      <el-col :xs="12" :md="8" :lg="6">
-        <p class="title text-left">HOA dues</p>
-        <p class="text text-left">${{ homeDetail.hoaFee }} a month</p>
+      <el-col :xs="24" :sm="12" :md="8" :lg="6">
+        <div class="detail-wrap">
+          <p class="title text-left">HOA dues</p>
+          <p class="text text-left">${{ homeDetail.hoaFee }} a month</p>
+        </div>
       </el-col>
-      <el-col :xs="12" :md="8" :lg="2">
-        <p class="title">Status</p>
-        <p class="text">{{ homeDetail.houseState || '-' }}</p>
+      <el-col :xs="24" :sm="12" :md="8" :lg="2">
+        <div class="detail-wrap">
+          <p class="title">Status</p>
+          <p class="text">{{ homeDetail.houseState || '-' }}</p>
+        </div>
       </el-col>
     </el-row>
   </div>
@@ -70,6 +82,15 @@ export default {
 
 <style lang="less" scoped>
 .detail_info-basis {
+  .detail-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    p {
+      flex: 0 0 49%;
+    }
+  }
   .title {
     font-size: 16px;
     font-family: LibreFranklin-Regular, LibreFranklin;

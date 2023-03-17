@@ -49,7 +49,8 @@ export default {
   padding-top: 159px;
   box-sizing: border-box;
   .content {
-    width: 1308px;
+    max-width: 1308px;
+    width: 100%;
     height: 697px;
     margin: 0 auto;
     background: #ffffff;

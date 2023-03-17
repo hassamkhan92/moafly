@@ -112,9 +112,12 @@ h1 {
     margin-left: 16px;
 
     a {
-      font-size: 18px;
-      line-height: 22px;
-      /* identical to box height */
+      font-size: 14px;
+      line-height: 20px;
+      @media (min-width: 768px) {
+        font-size: 18px;
+        line-height: 22px;
+      }
       color: rgba(15, 27, 67, 0.6);
       position: relative;
 

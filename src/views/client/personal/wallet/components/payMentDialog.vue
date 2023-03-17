@@ -1,5 +1,5 @@
 <template>
-  <MoaflyDialog class="pay-ment-dialog" width="600px" :visible.sync="visible" title="Payment method">
+  <MoaflyDialog class="pay-ment-dialog" :visible.sync="visible" title="Payment method">
     <div class="form-box">
       <div class="prompt-box">
         <div class="img-box"><img class="prompt-icon" :src="require('@/assets/images/wallet/wallet-empty.png')" alt="" /></div>
@@ -43,7 +43,9 @@ p {
 }
 .pay-ment-dialog {
   /deep/.el-dialog {
-    height: 520px;
+    max-width: 600px;
+    width: 100%;
+    min-height: 520px;
   }
   .form-box {
     padding-top: 60px;

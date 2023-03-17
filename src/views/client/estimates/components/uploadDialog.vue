@@ -2,15 +2,17 @@
   <div v-if="visible" class="dialog-main">
     <!-- 伤处单元号 -->
     <div v-if="contentType == 'unitNumber'" class="upload-main unitNumber-main">
-      <p class="unitNumber-title">Specify your unit number?</p>
-      <el-form :model="form" ref="form" :rules="rule">
-        <el-form-item prop="unitNumber">
-          <el-input class="unitNumber-input" maxlength="4" placeholder="" v-model="form.unitNumber"></el-input>
-        </el-form-item>
-      </el-form>
-      <div class="footer">
-        <div @click="handleSkip('upload', 1)" class="btn btn-cancel cursor">Skip</div>
-        <div @click="handlerNext('upload', 2)" class="btn btn-go cursor">Continue</div>
+      <div class="content-wrap">
+        <p class="unitNumber-title">Specify your unit number?</p>
+        <el-form :model="form" ref="form" :rules="rule">
+          <el-form-item prop="unitNumber">
+            <el-input class="unitNumber-input" maxlength="4" placeholder="" v-model="form.unitNumber"></el-input>
+          </el-form-item>
+        </el-form>
+        <div class="footer">
+          <div @click="handleSkip('upload', 1)" class="btn btn-cancel cursor">Skip</div>
+          <div @click="handlerNext('upload', 2)" class="btn btn-go cursor">Continue</div>
+        </div>
       </div>
     </div>
     <!-- 上传内容 -->
@@ -77,35 +79,44 @@
       <div class="header-bg"></div>
       <!-- 内容 -->
       <div class="result-content">
-        <div class="title-box">
-          <p class="title title1">{{ params.address1 }}</p>
-          <p class="title title2">{{ params.address2 }}</p>
-        </div>
-        <!-- 价格显示 -->
-        <div class="result-price">
-          <p class="price-name">Your home value</p>
-          <div class="price-text" :class="{ 'Moafly-active': isMoafly }">
-            <span class="text1 nowrap">moafly estimate </span>
-            <el-tooltip :hide-after="0" popper-class="price-tootip" class="item" effect="light" placement="bottom-start">
-              <div slot="content">{{ tipContent }}<span class="tootip-title-learn">Learn more.</span></div>
-              <img class="img-question" :src="require('@/assets/images/agent/question.png')" alt="" />
-            </el-tooltip>
-            <p class="line-row"></p>
-            <span class="text4"> ${{ homePrice == 'N/A' ? homePrice : numberFormat(homePrice) }}</span>
+        <div class="result-wrap">
+          <div class="title-box">
+            <p class="title title1">{{ params.address1 }}, {{ params.address2 }}</p>
           </div>
-          <div class="price-text" :class="{ 'zillow-text': isZillow }">
-            <img v-if="isZillow" class="zillow-text-img" :src="require('@/assets/svg/zillow-text.svg')" alt="" />
-            <span v-else class="text1 nowrap">zillow estimate</span>
-            <span class="text1"> estimate</span>
-            <p class="line-row"></p>
-            <span class="text4"> ${{ zestimate == 'N/A' ? zestimate : numberFormat(zestimate) }}</span>
+          <!-- 价格显示 -->
+          <div class="result-price">
+            <p class="price-name">Your home value</p>
+            <div class="price-text" :class="{ 'Moafly-active': isMoafly }">
+              <div class="price-box-left">
+                <span class="text1 nowrap">Moafly Estimate </span>
+                <el-tooltip :hide-after="0" popper-class="price-tootip" class="item" effect="light" placement="bottom-start">
+                  <div slot="content">{{ tipContent }}<span class="tootip-title-learn">Learn more.</span></div>
+                  <img class="img-question" :src="require('@/assets/images/agent/question.png')" alt="" />
+                </el-tooltip>
+              </div>
+              <div class="price-box-right">
+                <p class="line-row"></p>
+                <span class="text4"> ${{ homePrice == 'N/A' ? homePrice : numberFormat(homePrice) }}</span>
+              </div>
+            </div>
+            <div class="price-text" :class="{ 'zillow-text': isZillow }">
+              <div class="price-box-left">
+                <img v-if="isZillow" class="zillow-text-img" :src="require('@/assets/svg/zillow-text.svg')" alt="" />
+                <span v-else class="text1 nowrap">zillow estimate</span>
+                <span class="text1"> estimate</span>
+              </div>
+              <div class="price-box-right">
+                <p class="line-row"></p>
+                <span class="text4"> ${{ zestimate == 'N/A' ? zestimate : numberFormat(zestimate) }}</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="opera-box">
-          <img class="zillow-img" :src="require('@/assets/svg/zillow.svg')" alt="" />
-          <p @click="handlerSellHere" class="view-home-title cursor">
-            Start selling here >
-          </p>
+          <div class="opera-box">
+            <img class="zillow-img" :src="require('@/assets/svg/zillow.svg')" alt="" />
+            <p @click="handlerSellHere" class="view-home-title cursor">
+              Start selling here >
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -281,8 +292,8 @@ p {
   .flex();
 
   .upload-main {
-    width: 600px;
-    min-height: 420px;
+    max-width: 600px;
+    width: 100%;
     max-height: 700px;
     overflow-y: auto;
     background: #ffffff;
@@ -305,15 +316,16 @@ p {
       }
     }
     .upload-content {
-      width: 100%;
+      padding: 30px;
+      width: calc(100% - 60px);
       min-height: calc(100% - 70px);
+      min-height: 250px;
       .flex();
       align-items: flex-start;
       flex-wrap: wrap;
       .upload-box {
         width: 187px;
         height: 157px;
-        margin-top: 69px;
       }
       .upload-icon {
         margin-top: 12px;
@@ -328,9 +340,8 @@ p {
       }
     }
     .upload-fileList {
-      padding: 12px 36px 40px 28px;
       justify-content: flex-start;
-      min-height: 350px;
+      min-height: 250px;
       .img-list-box {
         width: 100%;
         max-height: 440px;
@@ -393,8 +404,8 @@ p {
     }
   }
   .unitNumber-main {
+    .flex();
     min-height: 380px;
-    padding-top: 100px;
     .unitNumber-title {
       .MoaflyText(400, 24px, 29px, #0f1b43);
       text-align: center;
@@ -427,8 +438,13 @@ p {
   .result-main {
     position: relative;
     box-sizing: border-box;
-    width: 990px;
-    height: 568px;
+    max-width: 990px;
+    width: 100%;
+    min-height: 568px;
+    @media (min-width: 768px) {
+      max-height: 568px;
+      height: 100%;
+    }
     background: #ffffff;
     border-radius: 16px;
     .flex();
@@ -441,42 +457,76 @@ p {
       z-index: 10;
     }
     .header-bg {
-      width: 406px;
+      max-width: 406px;
+      width: 100%;
       height: 100%;
       background-image: url('~@/assets/images/estimate/estimate.png');
       background-size: 100% 100%;
+      @media (max-width: 767px) {
+        max-width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+      }
     }
     .result-content {
-      width: calc(100% - 406px);
+      max-width: 100%;
       height: 100%;
       background: radial-gradient(98.74% 100% at 48.51% 0%, rgba(255, 255, 255, 0.15) 29.69%, rgba(220, 87, 117, 0.0045) 99.99%, rgba(220, 86, 116, 0.012) 100%);
       backdrop-filter: blur(5px);
-      padding: 120px 32px 0 32px;
+      padding: 20px;
       box-sizing: border-box;
+      @media (min-width: 768px) {
+        max-width: calc(100% - 406px);
+        width: calc(100% - 60px);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
       .title-box {
+        margin-bottom: 20px;
         .title {
-          .MoaflyText(500, 34px, 40px, #0f1b43);
+          .MoaflyText(500, 24px, 30px, #0f1b43);
+          @media (min-width: 768px) {
+            .MoaflyText(500, 34px, 40px, #0f1b43);
+          }
         }
         .title3 {
           font-size: 28px;
         }
       }
       .result-price {
-        margin-top: 47px;
         .price-name {
-          .MoaflyText(500, 28px, 40px, #0f1b43);
+          .MoaflyText(500, 20px, 26px, #0f1b43);
+          @media (min-width: 768px) {
+            .MoaflyText(500, 28px, 40px, #0f1b43);
+          }
           margin-bottom: 12px;
         }
         .price-text {
           padding: 0 16px;
+          margin-bottom: 15px;
           .flex();
-          justify-content: flex-start;
+          justify-content: space-between;
           .text1 {
-            .MoaflyText(400, 24px, 40px, #0f1b43);
+            .MoaflyText(400, 16px, 22px, #0f1b43);
+            @media (min-width: 768px) {
+              .MoaflyText(400, 24px, 40px, #0f1b43);
+            }
+          }
+          .price-box-left {
+            flex: 0 0 49%;
+            display: flex;
+            align-items: center;
+          }
+          .price-box-right {
+            flex: 0 0 49%;
+            align-items: center;
+            display: flex;
           }
           .line-row {
             margin-left: 24px;
-            width: 150px;
+            flex: 1;
             height: 0;
             border: 1px dashed #e1e3e7;
           }
@@ -487,8 +537,11 @@ p {
             border-color: #dc5674 !important;
           }
           .text4 {
-            margin-left: 24px;
-            .MoaflyText(500, 24px, 40px, #0f1b43);
+            margin-left: 15px;
+            .MoaflyText(400, 16px, 22px, #0f1b43);
+            @media (min-width: 768px) {
+              .MoaflyText(400, 24px, 40px, #0f1b43);
+            }
           }
 
           .zillow-text-img {
@@ -507,20 +560,21 @@ p {
         .Moafly-active {
           background: rgba(220, 86, 116, 0.1);
           border-radius: 8px;
+          padding: 8px;
         }
       }
 
       .opera-box {
         width: 100%;
-        position: absolute;
-        right: 0;
-        bottom: 40px;
-        padding: 0 24px;
+        padding: 20px;
         box-sizing: border-box;
         .flex();
         justify-content: space-between;
         .view-home-title {
-          .MoaflyText(400, 24px, 40px, #dc5674);
+          .MoaflyText(500, 20px, 26px, #dc5674);
+          @media (min-width: 768px) {
+            .MoaflyText(500, 28px, 40px, #dc5674);
+          }
         }
         .zillow-img {
           width: 100px;

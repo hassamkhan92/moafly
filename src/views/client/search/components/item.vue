@@ -100,7 +100,9 @@ export default {
 <style scoped lang="less">
 .search-item-container {
   width: 100%;
-  height: 200px;
+  @media (min-width: 992px) {
+    height: 200px;
+  }
   margin-bottom: 20px;
   background: #ffffff;
   box-shadow: 0px 1px 10px rgba(55, 64, 95, 0.12);
@@ -110,8 +112,12 @@ export default {
   justify-content: space-between;
   .item-left {
     position: relative;
-    width: 282px;
-    height: 100%;
+    width: 100%;
+    height: 200px;
+    @media (min-width: 992px) {
+      width: 282px;
+      height: 100%;
+    }
     .icon-xihuan-box {
       position: absolute;
       top: 24px;
@@ -146,9 +152,13 @@ export default {
     }
   }
   .item-right {
-    width: calc(100% - 282px);
+    width: 100%;
+    padding: 20px;
+    @media (min-width: 992px) {
+      width: calc(100% - 282px);
+      padding: 55px 24px 0;
+    }
     height: 100%;
-    padding: 55px 24px 0;
     box-sizing: border-box;
     .home-price {
       width: 100%;

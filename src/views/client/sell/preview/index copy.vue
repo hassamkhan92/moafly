@@ -22,7 +22,7 @@
     <MoaflyDialog width="600px" title="Publish listings" class="publish-dialog" :visible.sync="publishDialog">
       <div class="publish-box">
         <img class="publish-img margin-auto" :src="require('@/assets/images/sell/complete.png')" alt="" />
-        <p class="publish-title">One more step left! </p>
+        <p class="publish-title">One more step left!</p>
         <p class="publish-text">
           You need to sign your listing contract.
         </p>
@@ -186,7 +186,7 @@ export default {
         this.fresh = true;
         this.$loading.close();
       } else {
-        this.$router.push("/person/selling-homes")
+        this.$router.push('/person/selling-homes');
         // this.publishDialog = true;
       }
     },
@@ -231,15 +231,19 @@ p {
 .preview-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  @media (min-width: 768px) {
+    height: 100%;
+  }
   .title {
     .MoaflyText(700, 26px, 32px, #0f1b43);
     margin-bottom: 40px;
   }
   .collapse-box {
     width: 100%;
-    height: calc(100% - 120px);
     overflow-y: auto;
+    @media (min-width: 768px) {
+      height: calc(100% - 120px);
+    }
     .preview-item {
       width: 100%;
       background: #f5f6f7;

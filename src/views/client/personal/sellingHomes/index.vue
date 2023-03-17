@@ -26,7 +26,7 @@
         <Empty title="You haven't listed any property" text="Sell Your Home Now" to="/sell"></Empty>
       </template>
       <!-- 合同提示弹窗 -->
-      <MoaflyDialog width="600px" title="Publish listings" class="publish-dialog" :visible.sync="publishDialog">
+      <MoaflyDialog title="Publish listings" class="publish-dialog" :visible.sync="publishDialog">
         <div class="publish-box">
           <img class="publish-img margin-auto" :src="require('@/assets/images/sell/complete2.png')" alt="" />
           <p class="publish-title">One more step left!</p>
@@ -310,6 +310,12 @@ export default {
   // 合同提示弹窗样式
   ::v-deep {
     .publish-dialog {
+      /deep/.el-dialog {
+        max-width: 600px;
+        width: 100% !important;
+      }
+      max-width: 600px;
+      width: 100%;
       .el-dialog__body {
         padding: 40px 72.85px;
         box-sizing: border-box;

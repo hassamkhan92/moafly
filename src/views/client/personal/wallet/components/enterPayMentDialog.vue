@@ -1,5 +1,5 @@
 <template>
-  <MoaflyDialog class="enter-pay-ment-dialog" width="600px" top="100px" :visible.sync="visible" title="Enter payment details">
+  <MoaflyDialog class="enter-pay-ment-dialog" top="100px" :visible.sync="visible" title="Enter payment details">
     <el-form class="form-box" ref="form" :rules="rules" label-position="top" :model="form">
       <MFormItem class="card-form-item" label="Card information" prop="cardNumber">
         <MInput class="visa-input" suffix maxlength="16" :width="520" oninput="value = value.replace(/[^0-9]/g, '');" v-model="form.cardNumber">
@@ -234,6 +234,8 @@ export default {
 <style lang="less" scoped>
 .enter-pay-ment-dialog {
   /deep/.el-dialog {
+    max-width: 600px;
+    width: 100%;
     min-height: 650px;
     .input-card {
       .el-input__inner {

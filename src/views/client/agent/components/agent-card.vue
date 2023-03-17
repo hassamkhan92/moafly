@@ -87,7 +87,10 @@ export default {
 
 .card-header {
   width: 100%;
-  height: 380px;
+  height: 300px;
+  @media (min-width: 768px) {
+    height: 380px;
+  }
   overflow: hidden;
   position: relative;
   .cover {

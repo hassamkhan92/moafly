@@ -172,7 +172,9 @@ p {
 .preview-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  @media (min-width: 768px) {
+    height: 100%;
+  }
   .title {
     .MoaflyText(700, 26px, 32px, #0f1b43);
     margin-bottom: 40px;

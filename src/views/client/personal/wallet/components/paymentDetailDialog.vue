@@ -1,5 +1,5 @@
 <template>
-  <MoaflyDialog class="pay-ment-dialog" width="600px" :visible.sync="visible" @update="handlerClose" title="Payment method">
+  <MoaflyDialog class="pay-ment-dialog" :visible.sync="visible" @update="handlerClose" title="Payment method">
     <div v-loading="loading" class="form-box">
       <div class="prompt-box">
         <div class="card-box">
@@ -11,7 +11,7 @@
         </div>
         <div class="card-title-box">We will {{ payType ? ' charge' : 'hold' }} {{ payType ? payInfo.orderMoney : 1 }} USD on card ending with {{ cardInfo.last4 }}</div>
       </div>
-      <WButton class="profile" v-throttle radius="6px" text="Pay with card 0044" v-loading="btnLoad" @handleClick="handleSubmit" width="520px" height="48px"></WButton>
+      <WButton class="profile" v-throttle radius="6px" text="Pay with card 0044" v-loading="btnLoad" @handleClick="handleSubmit" buttonClass="remove-card-button" height="48px"></WButton>
     </div>
   </MoaflyDialog>
 </template>
@@ -73,7 +73,9 @@ p {
 }
 .pay-ment-dialog {
   /deep/.el-dialog {
-    height: 512px;
+    max-width: 600px;
+    width: 100%;
+    min-height: 512px;
   }
   .form-box {
     .prompt-box {
@@ -117,6 +119,10 @@ p {
     .profile {
       margin: 0 auto;
     }
+  }
+  .remove-card-button {
+    max-width: 520px;
+    width: 100% !important;
   }
 }
 </style>

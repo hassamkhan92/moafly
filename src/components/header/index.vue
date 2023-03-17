@@ -4,27 +4,27 @@
       <div class="header-logo header-item" @click="handleGoHome">
         <img class="img" :src="logo" alt="" />
       </div>
-      <div :class="['header-nav-container', active ? 'active' : '']" @click="handleClose">
-        <div class="header-buy header-item">
+      <div :class="['header-nav-container', active ? 'active' : '']">
+        <div class="header-buy header-item" @click="handleClose">
           <router-link class="link" to="/search">Buy</router-link>
         </div>
-        <div class="header-sell header-item">
+        <div class="header-sell header-item" @click="handleClose">
           <router-link class="link" to="/guide">Sell</router-link>
         </div>
-        <div class="header-sell header-item">
+        <div class="header-sell header-item" @click="handleClose">
           <router-link class="link" to="/estimates">Estimates</router-link>
         </div>
-        <div class="header-agents header-item">
+        <div class="header-agents header-item" @click="handleClose">
           <router-link class="link" to="/agent-guide">Agents</router-link>
         </div>
-        <div class="header-contact header-item">
+        <div class="header-contact header-item" @click="handleClose">
           <router-link class="link" to="/contact">Contact Us</router-link>
         </div>
         <template v-if="!token">
-          <div class="header-login header-item">
+          <div class="header-login header-item" @click="handleClose">
             <router-link class="link" to="/login">Log In</router-link>
           </div>
-          <div class="header-signup header-item" v-show="!token">
+          <div class="header-signup header-item" v-show="!token" @click="handleClose">
             <router-link class="link" to="/signup">Sign Up</router-link>
           </div>
         </template>

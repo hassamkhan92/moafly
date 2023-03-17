@@ -100,7 +100,8 @@ export default {
 
 <style lang="less" scoped>
 /deep/ .el-dialog {
-  width: 600px;
+  max-width: 600px !important;
+  width: 100% !important;
   height: 404px;
   .el-dialog__body {
     .header-title-box {

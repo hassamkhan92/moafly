@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`button-container w-button ${disabled ? 'button-disabled' : ''}`"
+    :class="`button-container w-button ${buttonClass} ${disabled ? 'button-disabled' : ''}`"
     :disable="disabled"
     @click="handleClick"
     :style="{ width: width, height: height, 'border-radius': radius, background: bgColor, pointerEvents: disabled ? 'none' : 'all', border: border }"
@@ -14,6 +14,10 @@
 <script>
 export default {
   props: {
+    buttonClass: {
+      type: String,
+      default: ''
+    },
     width: {
       type: String,
       default: '174px'

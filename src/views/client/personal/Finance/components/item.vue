@@ -259,7 +259,8 @@ export default {
   }
   /deep/.question-popups {
     .el-dialog {
-      width: 600px;
+      max-width: 600px !important;
+      width: 100% !important;
       height: 404px;
     }
     .el-dialog__body {

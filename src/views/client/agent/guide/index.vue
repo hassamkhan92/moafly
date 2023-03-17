@@ -401,7 +401,6 @@ export default {
           }
           .swiper-slide {
             width: 384px;
-            height: 170px;
             background: #f8f8f8;
             border-radius: 16px;
             padding: 16px;
@@ -422,6 +421,8 @@ export default {
               }
             }
             .item-content {
+              width: 100%;
+              margin-top: 15px;
               p {
                 margin: 0;
               }
