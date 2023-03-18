@@ -181,8 +181,6 @@ p {
   }
   .collapse-box {
     width: 100%;
-    height: calc(100% - 120px);
-    overflow-y: auto;
     .preview-item {
       width: 100%;
       background: #f5f6f7;

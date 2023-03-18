@@ -132,6 +132,8 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: 8px 8px 0 0;
+      object-fit: cover;
+      object-position: center;
     }
     .tag {
       position: absolute;

@@ -31,8 +31,7 @@
           <img class="publish-img margin-auto" :src="require('@/assets/images/sell/complete2.png')" alt="" />
           <p class="publish-title">One more step left!</p>
           <p class="publish-text">
-            You need to sign listing contract before we list <br />
-            your home to local MLS.
+            You need to sign listing contract before we list your home to local MLS.
           </p>
           <div class="btn-box">
             <WButton radius="4px" text="Cancel" color="#DC5674" border="1px solid #DC5674" width="100px" height="32px" bgColor="#fff" @handleClick="handlerPathSellHome"></WButton>
@@ -277,7 +276,8 @@ export default {
   }
   .w-popups {
     .content {
-      width: 656px;
+      max-width: 656px;
+      width: 100%;
       height: 326px;
       background: #ffffff;
       box-shadow: 11px 11px 42px 0px rgba(27, 23, 98, 0.15);
@@ -310,14 +310,15 @@ export default {
   // 合同提示弹窗样式
   ::v-deep {
     .publish-dialog {
-      /deep/.el-dialog {
+      .el-dialog {
         max-width: 600px;
         width: 100% !important;
       }
-      max-width: 600px;
-      width: 100%;
       .el-dialog__body {
-        padding: 40px 72.85px;
+        padding: 30px 20px;
+        @media (min-width: 768px) {
+          padding: 40px 72.85px;
+        }
         box-sizing: border-box;
       }
       .publish-box {
@@ -343,7 +344,8 @@ export default {
           .MoaflyText(400, 14px, 18px, rgba(15, 27, 67, 0.6));
           text-align: center;
           line-height: 18px;
-          white-space: nowrap;
+          max-width: 305px;
+          word-break: break-word;
         }
         .btn-box {
           .flex();
