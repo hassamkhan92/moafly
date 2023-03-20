@@ -82,9 +82,9 @@
         <!-- Most Popular Moafly Agents -->
         <div class="agent-most">
           <div class="agent-title">Real Estate Rising Stars…</div>
-          <div class="most-content swiper-container">
-            <div class="swiper-wrapper">
-              <div v-for="(item, idx) in popularAgentList" :key="idx" class="swiper-slide most-item">
+          <el-row class="rising-stars-wrap" :gutter="30">
+            <el-col v-for="(item, idx) in popularAgentList" :key="idx" :xs="24" :sm="12" :md="8">
+              <div class="most-item">
                 <div class="item-image">
                   <img :src="item.agentHeaderImg" alt="" />
                 </div>
@@ -95,8 +95,8 @@
                   <WButton class="btn" text="Learn more" bgColor="#DC5674" height="32px" radius="4px" width="117px" @handleClick="handleClick"></WButton>
                 </div>
               </div>
-            </div>
-          </div>
+            </el-col>
+          </el-row>
         </div>
       </div>
     </div>
@@ -111,6 +111,7 @@ import bottonFooter from '@/components/footer/index';
 import WButton from '@/components/Button/index.vue';
 import why_icon from '@/assets/images/why_icon.png';
 import { agentHowList } from './index.js';
+
 export default {
   name: 'agent',
   components: {
@@ -392,26 +393,37 @@ export default {
         position: relative;
         width: 100%;
         padding: 40px 0;
-        .swiper-container {
-          width: 100%;
-          .swiper-wrapper {
+        .rising-stars-wrap {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 30px 0;
+          .most-item {
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-          }
-          .swiper-slide {
-            width: 384px;
+            height: 100%;
             background: #f8f8f8;
             border-radius: 16px;
             padding: 16px;
             box-sizing: border-box;
+            &:not(:last-child) {
+              margin-bottom: 30px;
+            }
             .flex();
             justify-content: flex-start;
             .item-image {
-              width: 138px;
-              height: 138px;
+              width: auto;
+              display: block;
+              margin: auto;
+              height: 250px;
+              @media (min-width: 768px) {
+                height: 300px;
+              }
+              @media (max-width: 992px) {
+                height: 350px;
+              }
+
+              width: 100%;
               border-radius: 8px;
-              margin-right: 24px;
               img {
                 border-radius: 8px;
                 width: 100%;
@@ -423,6 +435,7 @@ export default {
             .item-content {
               width: 100%;
               margin-top: 15px;
+              text-align: center;
               p {
                 margin: 0;
               }
@@ -446,7 +459,7 @@ export default {
                 margin-bottom: 8px;
               }
               /deep/.btn {
-                margin-top: 8px;
+                margin: 8px auto 0;
                 .button-text {
                   .icon-xiangyou {
                     display: none !important;

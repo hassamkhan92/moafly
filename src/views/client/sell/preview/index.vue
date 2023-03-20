@@ -182,7 +182,7 @@ p {
   .collapse-box {
     width: 100%;
     .preview-item {
-      width: 100%;
+      width: calc(100% - 48px);
       background: #f5f6f7;
       box-shadow: 0px 4px 12px rgba(15, 27, 67, 0.1);
       border-radius: 2px;
