@@ -106,9 +106,9 @@ export default {
   computed: {},
   created() {},
   mounted() {
-    window.addEventListener('scroll', () => {
-      console.log(window.scrollY);
-    });
+    // window.addEventListener('scroll', () => {
+    //   console.log(window.scrollY);
+    // });
   },
   methods: {
     complete(map) {

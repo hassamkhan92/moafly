@@ -40,6 +40,7 @@ module.exports = {
     host: '0.0.0.0',
     open: false,
     hot: true,
+    liveReload: true,
     port: 4321,
     overlay: {
       warnings: false,

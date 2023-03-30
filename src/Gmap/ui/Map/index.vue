@@ -31,10 +31,9 @@ export default {
   computed: {},
   created() {},
   mounted() {
-    console.log('position==>', this.position);
     let map = initMap({ el: this.el });
     setTimeout(() => {
-       this.$emit('complete', map);
+      this.$emit('complete', map);
     }, 500);
   },
   methods: {}

@@ -60,11 +60,9 @@ export default {
     },
     getAgentData() {
       api.agent.listAgent(this.queryParams).then(res => {
-        console.log('res===>', res);
         if (res.code === 'K-000000') {
           this.agentSyncList = formatData(res.context.dataContent).splice(0, 6);
           this.agentSyncList = this.agentSyncList.sort(this.compare('rate', 0));
-          console.log('this.agentSyncList===>', this.agentSyncList);
         }
       });
     },

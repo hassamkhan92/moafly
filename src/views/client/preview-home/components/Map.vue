@@ -23,7 +23,6 @@ export default {
   components: { Map },
   methods: {
     mapComplete(map) {
-      console.log('地图加载完成==>', map);
       this.map = map;
       this.$emit('complete', map);
       // let el = document.getElementById('auto-search-address');
