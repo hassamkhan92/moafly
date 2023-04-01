@@ -70,58 +70,58 @@
           <el-form :label-position="labelPosition" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="80px">
             <el-row :gutter="20">
               <el-col :xs="24" :md="24">
-                <el-form-item label="Upload your signed contract" prop="contract">
-                  <el-upload class="upload" multiple :on-change="handleFileChange">
-                    <el-button type="primary">Click to upload</el-button>
+                <el-form-item class="input-wrap" label="Upload your signed contract" prop="contract">
+                  <el-upload class="upload" multiple :auto-upload="false" :on-change="handleFileChange">
+                    <el-button class="upload-button"><img :src="require('@/assets/images/upload-plus.svg')" alt="Upload" />Upload contract</el-button class="upload-button">
                   </el-upload>
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
-                <el-form-item label="Deposit amount" prop="deposit">
-                  <el-input v-model="ruleForm.deposit"></el-input>
+                <el-form-item class="input-wrap" label="Deposit amount" prop="deposit">
+                  <el-input class="request-input" v-model="ruleForm.deposit" placeholder="Please enter (%)"></el-input>
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
-                <el-form-item label="Offer Price" prop="offer">
-                  <el-input v-model="ruleForm.offer"></el-input>
+                <el-form-item class="input-wrap" label="Offer Price" prop="offer">
+                  <el-input class="request-input" v-model="ruleForm.offer" placeholder="Please enter"></el-input>
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
-                <el-form-item label="Appraisal contingency" prop="appraisalContingency">
+                <el-form-item class="input-wrap" label="Appraisal contingency" prop="appraisalContingency">
                   <el-select class="request-select" v-model="ruleForm.appraisalContingency" placeholder="Please Select">
                     <el-option v-for="item in yesNoOptions" :key="item.value" :label="item.label" :value="item.value" />
                   </el-select>
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
-                <el-form-item label="Type of loan" prop="loan">
+                <el-form-item class="input-wrap" label="Type of loan" prop="loan">
                   <el-select class="request-select" v-model="ruleForm.loanType" placeholder="Please Select">
                     <el-option v-for="item in loanType" :key="item.value" :label="item.label" :value="item.value" />
                   </el-select>
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
-                <el-form-item label="Loan contingency" prop="loanContingency">
+                <el-form-item class="input-wrap" label="Loan contingency" prop="loanContingency">
                   <el-select class="request-select" v-model="ruleForm.loanContingency" placeholder="Please Select">
                     <el-option v-for="item in yesNoOptions" :key="item.value" :label="item.label" :value="item.value" />
                   </el-select>
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
-                <el-form-item label="Appraisal contingency" prop="contingency">
+                <el-form-item class="input-wrap" label="Appraisal contingency" prop="contingency">
                   <el-select class="request-select" v-model="ruleForm.contingency" placeholder="Please Select">
                     <el-option v-for="item in yesNoOptions" :key="item.value" :label="item.label" :value="item.value" />
                   </el-select>
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
-                <el-form-item label="Escrow and title fees paid by" prop="titleFee">
+                <el-form-item class="input-wrap" label="Escrow and title fees paid by" prop="titleFee">
                   <el-select class="request-select" v-model="ruleForm.titleFee" placeholder="Please Select">
                     <el-option v-for="item in feeTypes" :key="item.value" :label="item.label" :value="item.value" />
                   </el-select>
                 </el-form-item>
               </el-col>
-              <el-col>
+              <el-col :xs="24" :md="24">
                 <div class="form-buttons">
                   <WButton class="cancel-button custom-button" v-throttle text="Cancel"></WButton>
                   <WButton class="submit-button custom-button" v-throttle text="Send" v-loading="btnLoad"></WButton>
@@ -139,7 +139,7 @@
 import WButton from '@/components/Button';
 import MoaflyDialog from '@/components/MoaflyDialog';
 import { formatNumber } from '@/util/index.js';
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 export default {
   components: { WButton, MoaflyDialog },
@@ -235,8 +235,8 @@ export default {
     formatPricePer() {
       return (this.homeDetail.listPrice / this.homeDetail.livingArea).toFixed(1);
     },
-      handleFileChange = (uploadFile, uploadFiles) => {
-  fileList.value = fileList.value.slice(-3)
+    handleFileChange() {
+      this.ruleForm.fileList.value = this.ruleForm.fileList.value.slice(-3);
     }
   }
 };
@@ -352,6 +352,42 @@ export default {
           padding-top: 24px;
           .request-select {
             width: 100%;
+          }
+          .input-wrap {
+            .el-form-item__label{
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 17px;
+              color: rgba(15, 27, 67, 0.6);
+              padding-bottom: 12px;
+            }
+            .request-input,
+            .request-select {
+              input {
+                border: 1px solid rgba(15, 27, 67, 0.2);
+                border-radius: 6px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #0F1B43;
+              }
+            }
+          }
+          .upload-button {
+            padding: 9px 16px;
+            border: 1px dashed rgba(15, 27, 67, 0.2);
+            border-radius: 6px;
+            span {
+              display: flex;
+              align-items: center;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 14px;
+              color: rgba(15, 27, 67, 0.6);
+              img {
+                margin-right: 9px;
+              }
+            }
           }
           .form-buttons {
             display: flex;
