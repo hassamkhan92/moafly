@@ -72,18 +72,18 @@
               <el-col :xs="24" :md="24">
                 <el-form-item class="input-wrap" label="Upload your signed contract" prop="contract">
                   <el-upload class="upload" multiple :auto-upload="false" :on-change="handleFileChange">
-                    <el-button class="upload-button"><img :src="require('@/assets/images/upload-plus.svg')" alt="Upload" />Upload contract</el-button class="upload-button">
+                    <el-button class="upload-button"><img :src="require('@/assets/images/upload-plus.svg')" alt="Upload" />Upload contract</el-button>
                   </el-upload>
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
                 <el-form-item class="input-wrap" label="Deposit amount" prop="deposit">
-                  <el-input class="request-input" v-model="ruleForm.deposit" placeholder="Please enter (%)"></el-input>
+                  <el-input class="request-input" v-model="ruleForm.deposit" placeholder="Please enter (%)" type="text" />
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
                 <el-form-item class="input-wrap" label="Offer Price" prop="offer">
-                  <el-input class="request-input" v-model="ruleForm.offer" placeholder="Please enter"></el-input>
+                  <el-input class="request-input" v-model="ruleForm.offer" placeholder="Please enter" />
                 </el-form-item>
               </el-col>
               <el-col :xs="24" :md="12">
@@ -175,40 +175,44 @@ export default {
       },
       yesNoOptions: [
         {
-          value: 'Yes',
+          value: '1',
           label: 'Yes'
         },
         {
-          value: 'No',
+          value: '0',
           label: 'No'
         }
       ],
       loanType: [
         {
-          value: 'Conventional',
+          value: '1',
           label: 'Conventional'
         },
         {
-          value: 'Jumbo loan',
-          label: 'Jumbo loan'
+          value: '2',
+          label: 'Jumbo'
         },
         {
-          value: 'Government-insured loan',
-          label: 'Government-insured loan'
+          value: '3',
+          label: 'FHA loan'
         },
         {
-          value: 'Fixed-rate mortgage',
-          label: 'Fixed-rate mortgage'
-        },
-        {
-          value: 'Adjustable-rate mortgage',
-          label: 'Adjustable-rate mortgage'
+          value: '4',
+          label: 'VA loan'
         }
       ],
       feeTypes: [
         {
-          value: 'Split',
+          value: '1',
           label: 'Split'
+        },
+        {
+          value: '2',
+          label: 'Buyer'
+        },
+        {
+          value: '3',
+          label: 'Seller'
         }
       ],
       rules: {
@@ -354,7 +358,7 @@ export default {
             width: 100%;
           }
           .input-wrap {
-            .el-form-item__label{
+            .el-form-item__label {
               font-weight: 400;
               font-size: 14px;
               line-height: 17px;
@@ -369,7 +373,7 @@ export default {
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 17px;
-                color: #0F1B43;
+                color: #0f1b43;
               }
             }
           }

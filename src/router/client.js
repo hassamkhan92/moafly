@@ -281,12 +281,18 @@ export default [
         name: 'Finance',
         meta: { title: 'Finance', needLogin: true /*需要加校检判断的路由*/ }
       },
-      // {
-      //   path: '/person/my-offers',
-      //   component: () => import('@/views/client/personal/myOffers'),
-      //   name: 'myOffers',
-      //   meta: { title: 'myOffers', needLogin: true /*需要加校检判断的路由*/ }
-      // },
+      {
+        path: '/person/my-offers',
+        component: () => import('@/views/client/personal/myOffers'),
+        name: 'myOffers',
+        meta: { title: 'myOffers', needLogin: true /*需要加校检判断的路由*/ }
+      },
+      {
+        path: '/person/messages',
+        component: () => import('@/views/client/personal/messages'),
+        name: 'messages',
+        meta: { title: 'Messages', needLogin: true /*需要加校检判断的路由*/ }
+      },
       {
         path: '/person/selling-homes',
         component: () => import('@/views/client/personal/sellingHomes'),

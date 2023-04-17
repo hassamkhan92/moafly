@@ -24,6 +24,14 @@ export function getOfferList(data) {
   });
 }
 
+export function postCustomerOffer(data) {
+  return request({
+    url: '/moafly/houseOffer/add',
+    method: 'post',
+    data
+  });
+}
+
 export function getOfferDetail(offerId) {
   return request({
     url: `/moafly/customerOffer/detail/${offerId}`,

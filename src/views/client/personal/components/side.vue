@@ -31,10 +31,10 @@ export default {
             index: '/person/Hires',
             title: 'Hires'
           },
-          // {
-          //   index: '/person/my-offers',
-          //   title: 'Offers'
-          // },
+          {
+            index: '/person/my-offers',
+            title: 'Offers'
+          },
           {
             index: '/person/Contracts',
             title: 'Contracts'
@@ -42,6 +42,10 @@ export default {
           {
             index: '/person/selling-homes',
             title: 'Selling  Homes'
+          },
+          {
+            index: '/person/messages',
+            title: 'Messages'
           }
         ];
       }

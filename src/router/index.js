@@ -30,14 +30,14 @@ export const routes = [
     component: ClientLayout,
     name: 'client',
     meta: { title: 'client', needLogin: true /*需要加校检判断的路由*/ },
-    redirect:'/home',
+    redirect: '/home',
     children: clientRoute
   },
   { path: '*', component: () => import('@/views/error/index.vue'), name: '404', meta: { title: '404', needLogin: false /*需要加校检判断的路由*/ } } //全不匹配的情况下，返回404，路由按顺序从上到下，依次匹配。最后一个*能匹配全部，
 ];
 const router = new VueRouter({
   base: process.env.BASE_URL,
-  // mode: 'history', // 注意添加这一项
+  mode: 'history', // 注意添加这一项
   routes
 });
 export default router;

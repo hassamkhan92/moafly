@@ -41,6 +41,7 @@ module.exports = {
     open: false,
     hot: true,
     liveReload: true,
+    https: true,
     port: 4321,
     overlay: {
       warnings: false,
@@ -54,11 +55,11 @@ module.exports = {
         // pathRewrite: { ['^' + process.env.VUE_APP_BASE_API]: '' } // 把/app 替换成 /
       }
     },
-    https: {
-      // 主要是下面两行的配置文件，不要忘记引入 fs 和 path 两个对象
-      cert: fs.readFileSync(path.join(__dirname, 'src/ssl/cert.crt')),
-      key: fs.readFileSync(path.join(__dirname, 'src/ssl/cert.key'))
-    },
+    // https: {
+    //   // 主要是下面两行的配置文件，不要忘记引入 fs 和 path 两个对象
+    //   cert: fs.readFileSync(path.join(__dirname, 'src/ssl/cert.crt')),
+    //   key: fs.readFileSync(path.join(__dirname, 'src/ssl/cert.key'))
+    // },
     disableHostCheck: true
   },
   pluginOptions: {
