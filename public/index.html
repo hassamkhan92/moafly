@@ -8,62 +8,57 @@
  -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
-  <!-- 使用CDN的CSS文件 -->
-  <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
-    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="external nofollow" rel="external nofollow"
-      rel="preload" as="style" />
-    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="external nofollow" rel="external nofollow"
-      rel="stylesheet" />
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>
+      <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <!-- 使用CDN的CSS文件 -->
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
+    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="external nofollow" rel="external nofollow" rel="preload" as="style" />
+    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="external nofollow" rel="external nofollow" rel="stylesheet" />
     <% } %>
-      <!-- 使用CDN的JS文件 -->
-      <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
-        <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
-        <% } %>
-</head>
+    <!-- 使用CDN的JS文件 -->
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+    <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %>
+  </head>
 
-<body>
-  <div id="app"></div>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA09lSg98yz9PWEQqDvsv_A6cv7O1_Kv5I&libraries=places&v=weekly&language=en&callback=initGoogleMap"
-    defer></script>
-  <script type="text/javascript">
-    function initGoogleMap(){
-      console.log("google init success");
-    }
-    (function (I, L, T, i, c, k, s) {
-      if (I.iticks) return;
-      I.iticks = { host: c, settings: s, clientId: k, cdn: L, queue: [] };
-      var h = T.head || T.documentElement;
-      var e = T.createElement(i);
-      var l = I.location;
-      e.async = true;
-      e.src = (L || c) + '/client/inject-v2.min.js';
-      h.insertBefore(e, h.firstChild);
-      I.iticks.call = function (a, b) {
-        I.iticks.queue.push([a, b]);
-      };
-    })(window, 'https://cdn.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'f2hXDnKoS6BSqrSwq_c', {});
-  </script>
-  <!-- Google tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MEKP44LG07">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MEKP44LG07');
-</script>
-</body>
-
+  <body>
+    <div id="app"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA09lSg98yz9PWEQqDvsv_A6cv7O1_Kv5I&libraries=places&v=weekly&language=en&callback=initGoogleMap" defer></script>
+    <script type="text/javascript">
+      function initGoogleMap() {
+        console.log('google init success');
+      }
+      (function(I, L, T, i, c, k, s) {
+        if (I.iticks) return;
+        I.iticks = { host: c, settings: s, clientId: k, cdn: L, queue: [] };
+        var h = T.head || T.documentElement;
+        var e = T.createElement(i);
+        var l = I.location;
+        e.async = true;
+        e.src = (L || c) + '/client/inject-v2.min.js';
+        h.insertBefore(e, h.firstChild);
+        I.iticks.call = function(a, b) {
+          I.iticks.queue.push([a, b]);
+        };
+      })(window, 'https://cdn.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'f2hXDnKoS6BSqrSwq_c', {});
+    </script>
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEKP44LG07"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-MEKP44LG07');
+    </script>
+  </body>
 </html>
 <style>
   .inner-container::-webkit-scrollbar {

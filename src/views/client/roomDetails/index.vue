@@ -50,7 +50,10 @@
                   <p class="price_text mofly_color price_text_2">${{ handleGetNumber() }}</p>
                 </div>
               </div>
-              <WButton class="moafly_price_btn" bgColor="#DC5674" text="Start an offer" radius="5px" height="44px" size="20px" @handleClick="handleClick"></WButton>
+              <div class="buttons-wrap">
+                <WButton class="button message" text="Message" @handleClick="showMessageModal"></WButton>
+                <WButton class="button price" text="Start an offer" @handleClick="showOfferModal"></WButton>
+              </div>
             </div>
           </div>
         </div>
@@ -71,6 +74,8 @@
       </div>
     </div>
     <allhome-images v-if="homeImagesDialog" :homeImagesDialog="homeImagesDialog" :homeImgList="homeImgList" @handlerHide="homeImagesDialog = false"></allhome-images>
+    <OfferDialog :showModal="visible" @handlerClose="visible = false" />
+    <MessageDialog :showModal="showMessage" @handlerClose="showMessage = false" />
     <Footer></Footer>
   </div>
 </template>
@@ -86,13 +91,18 @@ import Map from './components/Map.vue';
 import Similar from './components/Similar.vue';
 import Mostagents from './components/Mostagents.vue';
 import WButton from '@/components/Button';
+import OfferDialog from './components/OfferDialog.vue';
+import MessageDialog from './components/MessageDialog.vue';
+
 import * as api from '@/api';
 import { numberFormat } from '@/util/index.js';
 import { addMarker, goToMarker } from '@/Gmap/core/index.js';
 export default {
-  components: { WMask, WButton, Basis, Introduction, Mlstitle, Agentdisplay, Features, Map, Similar, Mostagents, allhomeImages },
+  components: { WMask, WButton, Basis, Introduction, Mlstitle, Agentdisplay, Features, Map, Similar, Mostagents, allhomeImages, OfferDialog, MessageDialog },
   data() {
     return {
+      visible: false,
+      showMessage: false,
       map: null,
       isAffix: false,
       activeName: '#overview',
@@ -105,11 +115,7 @@ export default {
   },
   computed: {},
   created() {},
-  mounted() {
-    // window.addEventListener('scroll', () => {
-    //   console.log(window.scrollY);
-    // });
-  },
+  mounted() {},
   methods: {
     complete(map) {
       const hoseId = this.$route.params.houseId;
@@ -145,8 +151,11 @@ export default {
         }
       });
     },
-    handleClick() {
-      this.$router.push(`/offer/${this.$route.params.houseId}`);
+    showOfferModal() {
+      this.visible = true;
+    },
+    showMessageModal() {
+      this.showMessage = true;
     },
     /**
      * 获取滚动条位置
@@ -268,9 +277,30 @@ p {
               color: #dc5674;
             }
           }
-          .moafly_price_btn {
-            margin-top: 32px;
-            width: 100% !important;
+          .buttons-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 30px;
+            gap: 8px;
+            .button {
+              border-radius: 6px !important;
+              border: 1px solid #dc5674 !important;
+              width: calc(50% - 6px) !important;
+              /deep/ .button-text {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+              }
+              &.message {
+                background-color: #fff !important;
+                /deep/ .button-text {
+                  color: #dc5674 !important;
+                }
+              }
+              &.offer {
+              }
+            }
           }
         }
       }
