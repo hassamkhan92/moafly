@@ -59,16 +59,12 @@ export default {
   },
   computed: {},
   created() {},
-  mounted() {
-    console.log(this.$route.path);
-  },
+  mounted() {},
   methods: {
     menuSelect(item) {
-      console.log(item);
       this.$router.push(item);
     },
     getPath() {
-      console.log(this.$route.path);
       this.activeRouter = this.$route.path;
     }
   }

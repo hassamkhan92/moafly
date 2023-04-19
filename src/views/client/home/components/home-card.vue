@@ -61,9 +61,7 @@ export default {
   },
   computed: {},
   created() {},
-  mounted() {
-    console.log('item===>', this.item);
-  },
+  mounted() {},
   methods: {
     getImg(item) {
       return require(`@/assets/images/search/${item}.jpg`);

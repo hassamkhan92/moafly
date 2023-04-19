@@ -81,7 +81,6 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log('zhixing');
       this.avatar = this.$store.getters.userInfo?.headImg;
       this.changeHeader(to);
     }

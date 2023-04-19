@@ -255,19 +255,22 @@ export default {
             if (res.context.dataContent && Array.isArray(res.context.dataContent)) {
               if (res.context.dataContent.length > 0) {
                 this.homeList = res.context.dataContent;
-                console.log('获取房屋数据==>', this.homeList);
               } else {
-                console.log('没有获取房屋数据1');
+                return;
+                // console.log('没有获取房屋数据1');
               }
             } else {
-              console.log('没有获取房屋数据2');
+              return;
+              // console.log('没有获取房屋数据2');
             }
           } else {
-            console.log('没有获取房屋数据3');
+            return;
+            // console.log('没有获取房屋数据3');
           }
         })
         .catch(err => {
-          console.log('搜索房屋失败', err);
+          return;
+          // console.log('搜索房屋失败', err);
         });
     }
   }

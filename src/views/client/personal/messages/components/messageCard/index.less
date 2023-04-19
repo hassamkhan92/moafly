@@ -1,0 +1,126 @@
+.card {
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  .property-info {
+    flex: 0 0 280px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .img-area {
+      width: 60px;
+      height: 60px;
+      margin-right: 16px;
+      img {
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+    .info {
+      .address {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: rgba(15, 27, 67, 1);
+        margin-bottom: 8px;
+      }
+      .address-two {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(15, 27, 67, 1);
+        margin-bottom: 0;
+      }
+    }
+  }
+  .message {
+    flex: 0 0 calc(75% - 340px);
+    margin-left: 60px;
+    p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: rgba(15, 27, 67, 1);
+      margin-bottom: 0;
+    }
+  }
+  .meta {
+    text-align: right;
+    flex: 0 0 25%;
+    .date {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: rgba(15, 27, 67, 0.6);
+      margin-bottom: 12px;
+    }
+    .email {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: rgba(15, 27, 67, 1);
+      margin-bottom: 0;
+    }
+  }
+}
+.thread {
+  padding: 40px;
+  flex: 0 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .message {
+    display: flex;
+    flex-wrap: wrap;
+    .person-info {
+      flex: 0 0 280px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      .img-area {
+        width: 50px;
+        height: 50px;
+        margin-right: 16px;
+        img {
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+        }
+      }
+      .info {
+        .name {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          color: rgba(15, 27, 67, 1);
+          margin-bottom: 6px;
+        }
+        .message-time {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 17px;
+          color: rgba(15, 27, 67, 0.6);
+          margin-bottom: 0;
+        }
+      }
+    }
+    .message {
+      flex: 0 0 calc(100% - 340px);
+      margin-left: 60px;
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(15, 27, 67, 1);
+        margin-bottom: 0;
+      }
+    }
+  }
+}
