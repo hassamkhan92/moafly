@@ -76,7 +76,6 @@ export default {
   max-width: 1200px;
   margin: auto;
   padding-top: 80px;
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   padding-bottom: 205px;
@@ -87,7 +86,6 @@ h1 {
   margin-top: 60px;
   font-size: 80px;
   line-height: 97px;
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   /* identical to box height */

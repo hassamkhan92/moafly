@@ -38,7 +38,7 @@ module.exports = {
   lintOnSave: false,
   devServer: {
     disableHostCheck: true,
-    host: '0.0.0.0',
+    host: 'localhost',
     open: false,
     hot: true,
     liveReload: true,

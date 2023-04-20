@@ -1,9 +1,11 @@
 <template>
-  <div v-if="listData.length === 0 && !loading" class="my-offers-empty">
+  <div v-if="listData1.length === 0 && !loading" class="my-offers-empty">
     <Empty title="You haven't listed any property" text="Sell Your Home Now" to="/sell/Address"></Empty>
   </div>
   <div v-else v-infinite-scroll="infineLoad" infinite-scroll-disabled="loading" class="my-offers-container">
-    <Item v-for="(offer, index) in listData" :item="offer" :key="index"></Item>
+    <el-row :gutter="20">
+      <Item v-for="(offer, index) in listData1" :item="offer" :key="index"></Item>
+    </el-row>
     <QInnerLoading :visible="loading"></QInnerLoading>
   </div>
 </template>

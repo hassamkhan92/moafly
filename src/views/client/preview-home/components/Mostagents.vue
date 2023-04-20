@@ -164,7 +164,6 @@ export default {
           border-top-left-radius: 10px;
         }
         .agent_item_name {
-          font-family: 'Inter';
           font-style: normal;
           font-weight: 700;
           font-size: 18px;
@@ -196,7 +195,6 @@ export default {
           }
         }
         .agent_item_title {
-          font-family: 'Inter';
           font-style: normal;
           font-weight: 400;
           font-size: 16px;
