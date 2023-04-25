@@ -9,46 +9,21 @@
 <template>
   <div class="offer-detail-container">
     <div class="back"><i class="el-icon-back" @click="handleGoBack"></i></div>
-    <h3>Offer Summary</h3>
-    <Summary :data="data"></Summary>
-
-    <div class="need-help-container">
-      <h3>Need help with your offer?</h3>
-      <el-row class="card-list" :gutter="30">
-        <el-col :sm="12" :md="8" :lg="6" v-for="i in 4" :key="i">
-          <el-card class="agent-card" body-style="padding:0">
-            <div class="img">
-              <img src="https://moaflytest.s3.us-east-2.amazonaws.com/moafly/20220417/1650201266264.jpg" />
-              <i class="iconfont icon-play"></i>
-            </div>
-            <div class="card-body">
-              <div class="name">Laura Addario Salgues</div>
-              <div class="rate">
-                <div class="score">{{ Number(5).toFixed(1) }}</div>
-                <el-rate :value="5" disabled></el-rate>
-              </div>
-              <div class="money">
-                <i class="iconfont icon-shuqian"></i>
-                14 USD/hour
-              </div>
-              <div class="address">
-                <i class="iconfont icon-31dingwei"></i>
-                Los Angeles, California
-              </div>
-            </div>
-          </el-card>
-        </el-col>
-      </el-row>
-    </div>
+    <h3>View Details</h3>
+    <Summary :data="data" />
+    <Roadmap />
+    <Offers />
   </div>
 </template>
 
 <script>
 import Summary from '../components/summary';
+import Roadmap from '../components/roadmap';
+import Offers from '../components/receivedOffers';
 import { offer } from '@/api';
 
 export default {
-  components: { Summary },
+  components: { Summary, Roadmap, Offers },
   mounted() {
     const offerId = this.$route.params.offerId;
     offer.getOfferDetail(offerId).then(res => {

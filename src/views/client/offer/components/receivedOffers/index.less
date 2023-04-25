@@ -1,0 +1,55 @@
+.offer-container {
+  .section-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0f1b43;
+    margin-bottom: 24px;
+  }
+  .offer {
+    border: 1px solid rgba(15, 27, 67, 0.4);
+    border-radius: 8px;
+    padding: 30px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    .left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      .icon {
+        margin-right: 24px;
+      }
+      .document {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 30px;
+        color: #0f1b43;
+        margin-bottom: 0;
+      }
+    }
+    .right {
+      .view-details {
+        border: 0;
+        padding: 0;
+        &:hover {
+          background-color: transparent;
+          /deep/span {
+            color: #dc5674;
+          }
+        }
+        /deep/span {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 30px;
+          color: rgba(15, 27, 67, 0.8);
+          transition: 0.3s ease all;
+        }
+      }
+    }
+  }
+}
