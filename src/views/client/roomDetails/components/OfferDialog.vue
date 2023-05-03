@@ -19,7 +19,16 @@
             </el-col>
             <el-col :xs="24" :md="12">
               <el-form-item class="input-wrap" label="Deposit amount" prop="deposit">
-                <el-input class="request-input" v-model="ruleForm.deposit" placeholder="Please enter (%)" type="text" />
+                <el-input
+                  class="request-input"
+                  v-model="ruleForm.deposit"
+                  placeholder="Please enter (%)"
+                  type="text"
+                  :max="'100'"
+                  :maxLength="3"
+                  :formatter="value => `${value}%`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
+                  :parser="value => value.replace(/\$\s?|(,*)/g, '')"
+                />
               </el-form-item>
             </el-col>
             <el-col :xs="24" :md="12">
@@ -78,6 +87,7 @@
 <script>
 import MoaflyDialog from '@/components/MoaflyDialog';
 import WButton from '@/components/Button';
+
 export default {
   components: { MoaflyDialog, WButton },
   props: { showModal: { type: Boolean, default: false } },

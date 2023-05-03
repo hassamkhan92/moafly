@@ -75,7 +75,7 @@
     </div>
     <allhome-images v-if="homeImagesDialog" :homeImagesDialog="homeImagesDialog" :homeImgList="homeImgList" @handlerHide="homeImagesDialog = false"></allhome-images>
     <OfferDialog :showModal="visible" @handlerClose="visible = false" />
-    <MessageDialog :showModal="showMessage" @handlerClose="showMessage = false" />
+    <MessageDialog :showModal="showMessage" @handlerClose="showMessage = false" :homeId="this.homeDetailsData.houseId" />
     <Footer></Footer>
   </div>
 </template>

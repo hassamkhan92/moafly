@@ -21,3 +21,4 @@ export * as offer from './modules/offer';
 export * as task from './modules/task';
 export * as pay from './modules/pay';
 export * as inviteRecord from './modules/inviteRecord';
+export * as messages from './modules/messages';
