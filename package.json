@@ -8,7 +8,7 @@
         "build:report": "vue-cli-service build --mode build --report",
         "lint": "vue-cli-service lint",
         "build:test": "vue-cli-service build --mode test --report",
-        "serve:online": "vue-cli-service serve --mode online",
+        "serve:online": "vue-cli-service serve --mode online --ignore client",
         "build_theme": "node_modules/.bin/et -o ./theme"
     },
     "dependencies": {

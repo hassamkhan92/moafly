@@ -4,8 +4,6 @@
       <el-tab-pane label="Buy message (10)" name="buyMessage">
         <div class="messages">
           <MessageCard />
-          <MessageCard />
-          <MessageCard />
         </div>
       </el-tab-pane>
       <el-tab-pane label="Sell message (10)" name="sellMessage"> </el-tab-pane>

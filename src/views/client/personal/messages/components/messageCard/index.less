@@ -4,6 +4,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
   .property-info {
     flex: 0 0 280px;
     display: flex;
@@ -67,6 +69,32 @@
       margin-bottom: 0;
     }
   }
+  .reply-wrap {
+    text-align: right;
+    flex: 0 0 25%;
+    .reply-button {
+      max-width: 88px;
+      width: 100% !important;
+      height: 32px !important;
+      border: 1px solid rgba(15, 27, 67, 0.6);
+      border-radius: 8px !important;
+      background-color: transparent !important;
+      margin-left: auto;
+      /deep/ .button-text {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 14px !important;
+        line-height: 17px;
+        color: #0f1b43 !important;
+      }
+      &:hover {
+        background-color: #0f1b43 !important;
+        /deep/ .button-text {
+          color: #fff !important;
+        }
+      }
+    }
+  }
 }
 .thread {
   padding: 40px;
@@ -74,6 +102,9 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  &.collapsed {
+    display: none;
+  }
   .message {
     display: flex;
     flex-wrap: wrap;

@@ -7,3 +7,11 @@ export function postSellerMessage(data) {
     data
   });
 }
+
+export function replyMessage(data) {
+  return request({
+    url: '/moafly/houseInfoConsultation/landlordReply',
+    method: 'post',
+    data
+  });
+}
