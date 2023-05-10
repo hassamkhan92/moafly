@@ -1,23 +1,23 @@
 <template>
   <div>
-    <div class="message-card">
+    <div class="message-card" :class="isUnread && data.unReadMsg > 0">
       <div class="card" @click="onCardClick">
         <div class="property-info">
           <div class="img-area">
-            <img src="@/assets/images/adress.png" />
+            <img :src="data.houseImgUrl" />
           </div>
           <div class="info">
-            <p class="address">1189 W 36th st</p>
-            <p class="address-two">Los Angeles, California</p>
+            <p class="address">{{ data.houseAddress }}</p>
+            <p class="address-two">{{ data.houseCity }}, {{ data.houseState }}</p>
           </div>
         </div>
         <div class="message">
-          <p>Hello ,I want to see the house type...</p>
+          <p>{{ data.lastMessage }}</p>
         </div>
         <div class="meta">
           <div v-if="isCollapsed">
-            <p class="date">2023-02-11 12:30</p>
-            <p class="email">wanghuan123@qq.com</p>
+            <p class="date">{{ data.lastMessgeTime }}</p>
+            <p class="email">{{ data.senderEmail }}</p>
           </div>
           <div v-else class="reply-wrap">
             <WButton class="reply-button" text="Reply" @handleClick="onClickReply"></WButton>
@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-    <replyDialog :showModal="showMessage" @handlerClose="showMessage = false" :homeId="33" />
+    <replyDialog :showModal="showMessage" @handlerClose="showMessage = false" :homeId="data.houseId" />
   </div>
 </template>
 
@@ -51,6 +51,14 @@ import replyDialog from '../replyMessage/index.vue';
 
 export default {
   components: { WButton, replyDialog },
+  props: {
+    data: {
+      type: Object,
+      default: () => {
+        return {};
+      }
+    }
+  },
   data() {
     return {
       showMessage: false,

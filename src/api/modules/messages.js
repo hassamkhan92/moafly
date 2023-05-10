@@ -15,3 +15,19 @@ export function replyMessage(data) {
     data
   });
 }
+
+export function getBuyMessagesList(data) {
+  return request({
+    url: '/moafly/houseInfoConsultation/customerSendList',
+    method: 'post',
+    data
+  });
+}
+
+export function getSellMessagesList(data) {
+  return request({
+    url: '/moafly/houseInfoConsultation/landlordReplyList',
+    method: 'post',
+    data
+  });
+}
