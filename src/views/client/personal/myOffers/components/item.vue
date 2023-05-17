@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     handleViewOffer(offerId) {
-      this.$router.push('/offer/detail/' + offerId);
+      this.$router.push('/offer/detail/');
     }
   }
 };

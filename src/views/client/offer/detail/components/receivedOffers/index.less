@@ -36,17 +36,17 @@
       .view-details {
         border: 0;
         padding: 0;
+        background-color: transparent !important;
         &:hover {
-          background-color: transparent;
-          /deep/span {
-            color: #dc5674;
+          /deep/.button-text {
+            color: #dc5674 !important;
           }
         }
-        /deep/span {
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 30px;
-          color: rgba(15, 27, 67, 0.8);
+        /deep/.button-text {
+          font-weight: 400 !important;
+          font-size: 18px !important;
+          line-height: 30px !important;
+          color: rgba(15, 27, 67, 0.8) !important;
           transition: 0.3s ease all;
         }
       }

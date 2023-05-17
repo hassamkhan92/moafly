@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import Summary from '../components/summary';
-import Roadmap from '../components/roadmap';
-import Offers from '../components/receivedOffers';
+import Summary from './components/summary';
+import Roadmap from './components/roadmap';
+import Offers from './components/receivedOffers';
 import { offer } from '@/api';
 
 export default {

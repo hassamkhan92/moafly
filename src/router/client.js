@@ -356,7 +356,7 @@ export default [
     meta: { title: 'sign up', needLogin: false /*需要加校检判断的路由*/ }
   },
   {
-    path: '/offer/detail/:offerId',
+    path: '/offer/detail/',
     component: () => import('@/views/client/offer/detail'),
     name: 'offerDetail',
     meta: { title: 'Offer detail', needLogin: true /*需要加校检判断的路由*/ }

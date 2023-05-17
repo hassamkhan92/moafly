@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import Summary from '../summary';
+import Summary from '../../detail/components/summary';
 
 export default {
   props: ['data'],
